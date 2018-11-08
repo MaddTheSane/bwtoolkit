@@ -7,6 +7,7 @@
 //
 
 #import "BWStyledTextField.h"
+#import "BWStyledTextFieldCell.h"
 
 @implementation BWStyledTextField
 

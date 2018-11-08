@@ -8,17 +8,21 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWGradientBox : NSView 
 {
 	NSColor *fillStartingColor, *fillEndingColor, *fillColor;
 	NSColor *topBorderColor, *bottomBorderColor;
-	float topInsetAlpha, bottomInsetAlpha;
+	CGFloat topInsetAlpha, bottomInsetAlpha;
 	
 	BOOL hasTopBorder, hasBottomBorder, hasGradient, hasFillColor;
 }
 
+IBInspectable
 @property (nonatomic, strong) NSColor *fillStartingColor, *fillEndingColor, *fillColor, *topBorderColor, *bottomBorderColor;
-@property float topInsetAlpha, bottomInsetAlpha;
+IBInspectable
+@property CGFloat topInsetAlpha, bottomInsetAlpha;
+IBInspectable
 @property BOOL hasTopBorder, hasBottomBorder, hasGradient, hasFillColor;
 
 @end

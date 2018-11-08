@@ -8,26 +8,24 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWStyledTextField : NSTextField
-{
-	
-}
 
-- (BOOL)hasGradient;
-- (void)setHasGradient:(BOOL)flag;
-- (NSColor *)startingColor;
-- (void)setStartingColor:(NSColor *)color;
-- (NSColor *)endingColor;
-- (void)setEndingColor:(NSColor *)color;
+IBInspectable
+@property BOOL hasGradient;
+IBInspectable
+@property (strong) NSColor *startingColor;
+IBInspectable
+@property (strong) NSColor *endingColor;
 
-- (NSColor *)solidColor;
-- (void)setSolidColor:(NSColor *)color;
+IBInspectable
+@property (strong) NSColor *solidColor;
 
-- (BOOL)hasShadow;
-- (void)setHasShadow:(BOOL)flag;
-- (BOOL)shadowIsBelow;
-- (void)setShadowIsBelow:(BOOL)flag;
-- (NSColor *)shadowColor;
-- (void)setShadowColor:(NSColor *)color;
+IBInspectable
+@property BOOL hasShadow;
+IBInspectable
+@property BOOL shadowIsBelow;
+IBInspectable
+@property (strong) NSColor *shadowColor;
 
 @end

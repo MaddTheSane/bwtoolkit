@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWStyledTextFieldCell : NSTextFieldCell 
 {
 	BOOL shadowIsBelow, hasShadow, hasGradient;
@@ -17,7 +18,9 @@
 	NSMutableDictionary *previousAttributes;
 }
 
+IBInspectable
 @property (nonatomic) BOOL shadowIsBelow, hasShadow, hasGradient;
+IBInspectable
 @property (nonatomic, strong) NSColor *shadowColor, *startingColor, *endingColor, *solidColor;
 
 @end
