@@ -8,12 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWTexturedSliderCell : NSSliderCell 
 {
 	BOOL isPressed;
 	int trackHeight;
 }
 
-@property int trackHeight;
+@property IBInspectable int trackHeight;
 
 @end

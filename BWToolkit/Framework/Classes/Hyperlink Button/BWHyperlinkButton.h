@@ -8,12 +8,13 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWHyperlinkButton : NSButton 
 {
 	NSURL *url;
 }
 
-@property (copy, nonatomic) NSString *urlString;
-@property (retain, nonatomic) NSURL *url;
+@property (copy, nonatomic) IBInspectable NSString *urlString;
+@property (retain, nonatomic) IBInspectable NSURL *url;
 
 @end

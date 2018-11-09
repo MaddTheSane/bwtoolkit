@@ -11,21 +11,14 @@
 IB_DESIGNABLE
 @interface BWStyledTextField : NSTextField
 
-IBInspectable
-@property BOOL hasGradient;
-IBInspectable
-@property (strong) NSColor *startingColor;
-IBInspectable
-@property (strong) NSColor *endingColor;
+@property IBInspectable BOOL hasGradient;
+@property (strong) IBInspectable NSColor *startingColor;
+@property (strong) IBInspectable NSColor *endingColor;
 
-IBInspectable
-@property (strong) NSColor *solidColor;
+@property (strong) IBInspectable NSColor *solidColor;
 
-IBInspectable
-@property BOOL hasShadow;
-IBInspectable
-@property BOOL shadowIsBelow;
-IBInspectable
-@property (strong) NSColor *shadowColor;
+@property IBInspectable BOOL hasShadow;
+@property IBInspectable BOOL shadowIsBelow;
+@property (strong) IBInspectable NSColor *shadowColor;
 
 @end

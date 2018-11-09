@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWTexturedSlider : NSSlider
 {
 	int trackHeight;
@@ -16,10 +17,10 @@
 	NSButton *minButton, *maxButton;
 }
 
-@property (nonatomic) NSInteger indicatorIndex;
+@property (nonatomic) IBInspectable NSInteger indicatorIndex;
 @property (retain) NSButton *minButton;
 @property (retain) NSButton *maxButton;
 
-@property int trackHeight;
+@property IBInspectable int trackHeight;
 
 @end

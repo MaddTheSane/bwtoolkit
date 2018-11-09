@@ -18,9 +18,7 @@ IB_DESIGNABLE
 	NSMutableDictionary *previousAttributes;
 }
 
-IBInspectable
-@property (nonatomic) BOOL shadowIsBelow, hasShadow, hasGradient;
-IBInspectable
-@property (nonatomic, strong) NSColor *shadowColor, *startingColor, *endingColor, *solidColor;
+@property (nonatomic) IBInspectable BOOL shadowIsBelow, hasShadow, hasGradient;
+@property (nonatomic, strong) IBInspectable NSColor *shadowColor, *startingColor, *endingColor, *solidColor;
 
 @end
