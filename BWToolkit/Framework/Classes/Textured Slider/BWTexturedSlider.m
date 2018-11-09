@@ -10,7 +10,7 @@
 #import "BWTexturedSliderCell.h"
 
 static NSImage *quietSpeakerImage, *loudSpeakerImage, *smallPhotoImage, *largePhotoImage;
-static float imageInset = 25;
+static CGFloat imageInset = 25;
 
 @implementation BWTexturedSlider
 
@@ -114,7 +114,7 @@ static float imageInset = 25;
 	[[self cell] drawWithFrame:sliderCellRect inView:self];
 }
 
-- (void)setIndicatorIndex:(int)anIndex
+- (void)setIndicatorIndex:(NSInteger)anIndex
 {
 	[minButton removeFromSuperview];
 	[maxButton removeFromSuperview];

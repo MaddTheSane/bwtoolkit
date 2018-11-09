@@ -8,9 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BWAddSheetBottomBar : NSView 
-{
-
-}
+@interface BWAddSheetBottomBar : NSView
 
 @end

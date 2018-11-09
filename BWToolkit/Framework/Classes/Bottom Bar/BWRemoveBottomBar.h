@@ -8,9 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BWRemoveBottomBar : NSView 
-{
-
-}
+@interface BWRemoveBottomBar : NSView
 
 @end

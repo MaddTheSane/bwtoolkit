@@ -10,9 +10,10 @@
 
 @interface BWHyperlinkButton : NSButton 
 {
-	NSString *urlString;
+	NSURL *url;
 }
 
 @property (copy, nonatomic) NSString *urlString;
+@property (retain, nonatomic) NSURL *url;
 
 @end

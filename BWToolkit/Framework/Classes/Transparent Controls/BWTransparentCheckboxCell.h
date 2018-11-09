@@ -10,8 +10,5 @@
 #import "BWTransparentCheckbox.h"
 
 @interface BWTransparentCheckboxCell : NSButtonCell 
-{
-
-}
 
 @end

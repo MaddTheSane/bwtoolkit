@@ -16,12 +16,12 @@
 
 - (NSDictionary *)_textAttributes
 {
-	NSMutableDictionary *attributes = [[[NSMutableDictionary alloc] init] autorelease];
+	NSMutableDictionary *attributes = [[NSMutableDictionary alloc] init];
 	[attributes addEntriesFromDictionary:[super _textAttributes]];
 	[attributes setObject:[NSColor blueColor] forKey:NSForegroundColorAttributeName];
-	[attributes setObject:[NSNumber numberWithInt:NSSingleUnderlineStyle] forKey:NSUnderlineStyleAttributeName];
+	[attributes setObject:@(NSUnderlineStyleSingle) forKey:NSUnderlineStyleAttributeName];
 	
-	return attributes;
+	return [attributes autorelease];
 }
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView

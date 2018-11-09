@@ -8,9 +8,6 @@
 
 #import <Cocoa/Cocoa.h>
 
-@interface BWTransparentButton : NSButton 
-{
-
-}
+@interface BWTransparentButton : NSButton
 
 @end

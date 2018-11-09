@@ -11,7 +11,17 @@
 
 @implementation BWHyperlinkButton
 
-@synthesize urlString;
+@synthesize url;
+
+- (NSString *)urlString
+{
+	return self.url.absoluteString;
+}
+
+- (void)setUrlString:(NSString *)urlString
+{
+	self.url = [NSURL URLWithString:urlString];
+}
 
 -(void)awakeFromNib
 {
@@ -23,7 +33,11 @@
 {
 	if ((self = [super initWithCoder:decoder]) != nil)
 	{
-		[self setUrlString:[decoder decodeObjectForKey:@"BWHBUrlString"]];	
+		if ([decoder containsValueForKey:@"BWHBUrlString"]) {
+			[self setUrlString:[decoder decodeObjectForKey:@"BWHBUrlString"]];
+		} else {
+			[self setUrl:[decoder decodeObjectForKey:@"BWHBUrl"]];
+		}
 	}
 	return self;
 }
@@ -32,7 +46,7 @@
 {
     [super encodeWithCoder:coder];
 
-	[coder encodeObject:[self urlString] forKey:@"BWHBUrlString"];
+	[coder encodeObject:[self url] forKey:@"BWHBUrl"];
 } 
 
 - (void)openURLInBrowser:(id)sender
@@ -48,7 +62,7 @@
 
 - (void)dealloc
 {
-	[urlString release];
+	[url release];
 	[super dealloc];
 }
 

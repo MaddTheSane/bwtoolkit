@@ -9,8 +9,5 @@
 #import <Cocoa/Cocoa.h>
 
 @interface BWAddSmallBottomBar : NSView
-{
-
-}
 
 @end

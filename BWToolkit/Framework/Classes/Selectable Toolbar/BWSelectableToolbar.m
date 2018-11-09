@@ -22,16 +22,16 @@ static NSToolbar *editableToolbar;
 - (void)encodeWithCoder:(NSCoder*)coder;
 @end
 
-@interface BWSelectableToolbar (BWSTPrivate)
+@interface BWSelectableToolbar ()
 - (NSArray *)selectableItemIdentifiers;
 - (void)setItemSelectors;
 - (void)initialSetup;
 - (void)toggleActiveView:(id)sender;
-- (NSString *)identifierAtIndex:(int)index;
+- (NSString *)identifierAtIndex:(NSInteger)index;
 - (void)switchToItemAtIndex:(NSInteger)anIndex animate:(BOOL)flag;
 - (NSInteger)toolbarIndexFromSelectableIndex:(NSInteger)selectableIndex;
 - (void)selectInitialItem;
-- (void)selectItemAtIndex:(int)anIndex;
+- (void)selectItemAtIndex:(NSInteger)anIndex;
 // IBDocument methods
 - (void)addObject:(id)object toParent:(id)parent;
 - (void)moveObject:(id)object toParent:(id)parent;
@@ -279,7 +279,7 @@ static NSToolbar *editableToolbar;
 }
 
 // Tells the toolbar to draw the selection behind the toolbar item and records the selected item identifier
-- (void)selectItemAtIndex:(int)anIndex
+- (void)selectItemAtIndex:(NSInteger)anIndex
 {
 	NSArray *toolbarItems = self.items;
 	

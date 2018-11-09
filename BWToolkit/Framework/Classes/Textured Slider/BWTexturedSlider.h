@@ -20,7 +20,6 @@
 @property (retain) NSButton *minButton;
 @property (retain) NSButton *maxButton;
 
-- (int)trackHeight;
-- (void)setTrackHeight:(int)newTrackHeight;
+@property int trackHeight;
 
 @end
