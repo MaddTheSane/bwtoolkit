@@ -8,6 +8,7 @@
 
 #import "BWAddSheetBottomBar.h"
 #import "NSWindow-NSTimeMachineSupport.h"
+#import "IBPrivateOrOutdated.h"
 
 @interface NSWindow (BWPrivate)
 - (void)setBottomCornerRounded:(BOOL)flag;

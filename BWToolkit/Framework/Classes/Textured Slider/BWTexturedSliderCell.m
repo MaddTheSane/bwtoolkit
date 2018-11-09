@@ -6,6 +6,7 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWTexturedSliderCell.h"
 
 @implementation BWTexturedSliderCell
@@ -74,7 +75,7 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 	else
 		slideRect.size.height = trackFillImage.size.height + 1;
 	
-	slideRect.origin.y += roundf((cellFrame.size.height - slideRect.size.height) / 2);
+	slideRect.origin.y += round((cellFrame.size.height - slideRect.size.height) / 2);
 
 	// Inset the bar so the knob goes all the way to both ends
 	slideRect.size.width -= 9;
@@ -96,13 +97,13 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 		drawImage = thumbNImage;
 	
 	NSPoint drawPoint;
-	drawPoint.x = rect.origin.x + roundf((rect.size.width - drawImage.size.width) / 2);
-	drawPoint.y = NSMaxY(rect) - roundf((rect.size.height - drawImage.size.height) / 2);
+	drawPoint.x = rect.origin.x + round((rect.size.width - drawImage.size.width) / 2);
+	drawPoint.y = NSMaxY(rect) - round((rect.size.height - drawImage.size.height) / 2);
 	
 	if (trackHeight == 0)
 		drawPoint.y++;
 	
-	[drawImage compositeToPoint:drawPoint operation:NSCompositeSourceOver];
+	[drawImage drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositingOperationSourceOver fraction:1];
 }
 
 - (BOOL)_usesCustomTrackImage

@@ -8,6 +8,7 @@
 
 #import "BWAddRegularBottomBar.h"
 #import "NSWindow-NSTimeMachineSupport.h"
+#import "IBPrivateOrOutdated.h"
 
 @implementation BWAddRegularBottomBar
 

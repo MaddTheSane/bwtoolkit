@@ -9,6 +9,7 @@
 #import "BWSelectableToolbar.h"
 #import "BWSelectableToolbarHelper.h"
 #import "NSWindow+BWAdditions.h"
+#import "IBPrivateOrOutdated.h"
 
 NSString * const BWSelectableToolbarItemClickedNotification = @"BWSelectableToolbarItemClicked";
 
@@ -23,15 +24,17 @@ static NSToolbar *editableToolbar;
 @end
 
 @interface BWSelectableToolbar ()
-- (NSArray *)selectableItemIdentifiers;
+- (NSArray<NSToolbarItemIdentifier> *)selectableItemIdentifiers;
 - (void)setItemSelectors;
 - (void)initialSetup;
 - (void)toggleActiveView:(id)sender;
-- (NSString *)identifierAtIndex:(NSInteger)index;
+- (NSToolbarItemIdentifier)identifierAtIndex:(NSInteger)index;
 - (void)switchToItemAtIndex:(NSInteger)anIndex animate:(BOOL)flag;
 - (NSInteger)toolbarIndexFromSelectableIndex:(NSInteger)selectableIndex;
 - (void)selectInitialItem;
 - (void)selectItemAtIndex:(NSInteger)anIndex;
+@end
+@interface BWSelectableToolbar (IBDocument)
 // IBDocument methods
 - (void)addObject:(id)object toParent:(id)parent;
 - (void)moveObject:(id)object toParent:(id)parent;
@@ -316,7 +319,7 @@ static NSToolbar *editableToolbar;
 	}
 }
 
-- (NSString *)identifierAtIndex:(int)index
+- (NSString *)identifierAtIndex:(NSInteger)index
 {
 	NSToolbarItem *item;
 	NSString *newIdentifier = nil;
@@ -528,7 +531,7 @@ static NSToolbar *editableToolbar;
 	return labelArray;
 }
 
-- (int)selectedIndex
+- (NSInteger)selectedIndex
 {
 	// The actual selected index can change on us (for instance, when the user re-orders toolbar items). So we need to figure it out dynamically, based on the selected identifier.
 	if ([[helper selectedIdentifier] isEqualToString:@""])
@@ -539,7 +542,7 @@ static NSToolbar *editableToolbar;
 	return selectedIndex;
 }
 
-- (void)setSelectedIndex:(int)anIndex
+- (void)setSelectedIndex:(NSInteger)anIndex
 {
 	selectedIndex = anIndex;
 	[self switchToItemAtIndex:[self toolbarIndexFromSelectableIndex:anIndex] animate:YES];

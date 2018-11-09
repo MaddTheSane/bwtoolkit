@@ -8,6 +8,7 @@
 
 #import "BWTransparentScrollView.h"
 #import "BWTransparentScroller.h"
+#import "IBPrivateOrOutdated.h"
 
 @implementation BWTransparentScrollView
 

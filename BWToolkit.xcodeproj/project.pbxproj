@@ -66,6 +66,8 @@
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		55363A092194FFAA004D1A82 /* Graphics.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55363A082194FFAA004D1A82 /* Graphics.xcassets */; };
 		55363A0A2194FFAA004D1A82 /* Graphics.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55363A082194FFAA004D1A82 /* Graphics.xcassets */; };
+		55FF979921962BE10082191B /* IBPrivateOrOutdated.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FF979821962BB10082191B /* IBPrivateOrOutdated.h */; };
+		55FF979A21962BE10082191B /* IBPrivateOrOutdated.h in Headers */ = {isa = PBXBuildFile; fileRef = 55FF979821962BB10082191B /* IBPrivateOrOutdated.h */; };
 		8D1AC9700486D14A00FE50C9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		C08787290A49DE9A00E9B151 /* BWToolkit.m in Sources */ = {isa = PBXBuildFile; fileRef = 0259C576FE90428111CA0C5A /* BWToolkit.m */; };
 		C0D069560A49DF9100C95564 /* InterfaceBuilderKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */; };
@@ -420,6 +422,7 @@
 		55363A082194FFAA004D1A82 /* Graphics.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Graphics.xcassets; sourceTree = "<group>"; };
 		55FF979621961AED0082191B /* BWTKMAS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTKMAS.modulemap; sourceTree = "<group>"; };
 		55FF979721961AED0082191B /* BWTK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTK.modulemap; sourceTree = "<group>"; };
+		55FF979821962BB10082191B /* IBPrivateOrOutdated.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IBPrivateOrOutdated.h; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = "<absolute>"; };
 		C7534CD31325BC4A002EF382 /* BWTK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWTK.framework; path = DerivedData/BWToolkit/Build/Products/Release/BWTK.framework; sourceTree = "<group>"; };
@@ -1223,6 +1226,7 @@
 				CA960A7C0E76766E00308367 /* NSTokenAttachmentCell.h */,
 				CA0D2A250E2F034000E8680C /* NSWindow-NSTimeMachineSupport.h */,
 				CACEBC7A0E178524003E3CB2 /* NSCustomView.h */,
+				55FF979821962BB10082191B /* IBPrivateOrOutdated.h */,
 			);
 			path = "Private Cocoa Headers";
 			sourceTree = "<group>";
@@ -1300,6 +1304,7 @@
 				CA960A7F0E76766E00308367 /* NSTokenAttachment.h in Headers */,
 				CA960AAB0E7676E000308367 /* BWTokenAttachmentCell.h in Headers */,
 				CA405A700EBF2E400010580A /* BWTransparentScroller.h in Headers */,
+				55FF979921962BE10082191B /* IBPrivateOrOutdated.h in Headers */,
 				CA3A18890ECA9E86000C3A43 /* BWTransparentTextFieldCell.h in Headers */,
 				CAEA804D0ED0A73E0062B378 /* BWToolbarItem.h in Headers */,
 				CA66C0F70EF79AC0005EE9A5 /* NSString+BWAdditions.h in Headers */,
@@ -1318,6 +1323,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				55FF979A21962BE10082191B /* IBPrivateOrOutdated.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

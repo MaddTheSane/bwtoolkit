@@ -8,6 +8,7 @@
 
 #import "BWAddMiniBottomBar.h"
 #import "NSWindow-NSTimeMachineSupport.h"
+#import "IBPrivateOrOutdated.h"
 
 @interface NSWindow (BWBBPrivate)
 - (void)setBottomCornerRounded:(BOOL)flag;

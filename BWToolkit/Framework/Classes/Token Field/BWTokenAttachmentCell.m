@@ -56,7 +56,7 @@ static float arrowHeight = 6.0;
 	arrowGradient = [[NSGradient alloc] initWithStartingColor:arrowGradientTopColor endingColor:arrowGradientBottomColor];
 	
 	textShadow = [[NSShadow alloc] init];
-	[textShadow setShadowOffset:NSMakeSize(0,1 / [[NSScreen mainScreen] userSpaceScaleFactor])];
+	[textShadow setShadowOffset:NSMakeSize(0,1 / [[NSScreen mainScreen] backingScaleFactor])];
 	[textShadow setShadowColor:[[NSColor blackColor] colorWithAlphaComponent:0.3]];
 	
 	highlightedArrowColor = [[NSColor colorWithCalibratedRed:246.0/255.0 green:249.0/255.0 blue:254.0/255.0 alpha:1] retain];
@@ -64,7 +64,7 @@ static float arrowHeight = 6.0;
 
 - (NSImage *)arrowInHighlightedState:(BOOL)isHighlighted
 {
-	CGFloat scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+	CGFloat scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
 	
 	NSImage *arrowImage = [[[NSImage alloc] init] autorelease];
 	[arrowImage setSize:NSMakeSize(arrowWidth, arrowHeight)];
@@ -118,7 +118,7 @@ static float arrowHeight = 6.0;
 
 - (void)drawTokenWithFrame:(NSRect)aRect inView:(NSView *)aView;
 {
-	float scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+	CGFloat scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
 	
 	NSRect drawingRect = [self drawingRectForBounds:aRect];
 	NSRect insetRect = NSInsetRect(drawingRect, 1 / scaleFactor, 1 / scaleFactor);
@@ -208,7 +208,7 @@ static float arrowHeight = 6.0;
 	if (!_tacFlags._selected)
 		pullDownRect.origin.y++;
 	
-	float scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+	CGFloat scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
 
 	if (scaleFactor < 0.99 || scaleFactor > 1.01)
 		pullDownRect = [[self controlView] centerScanRect:pullDownRect];

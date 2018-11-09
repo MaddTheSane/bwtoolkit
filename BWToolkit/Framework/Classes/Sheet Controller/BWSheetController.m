@@ -62,7 +62,7 @@
 {
 	if (delegate != nil && [delegate respondsToSelector:@selector(shouldCloseSheet:)])
 	{	
-		if ([delegate performSelector:@selector(shouldCloseSheet:) withObject:sender])	
+		if ([delegate shouldCloseSheet:sender])	
 			[self closeSheet:self];
 	}
 	else

@@ -8,6 +8,7 @@
 
 #import "BWHyperlinkButton.h"
 #import "BWHyperlinkButtonCell.h"
+#import "IBPrivateOrOutdated.h"
 
 @implementation BWHyperlinkButton
 

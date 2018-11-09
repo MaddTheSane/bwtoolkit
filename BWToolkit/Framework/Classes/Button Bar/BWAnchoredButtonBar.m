@@ -18,9 +18,9 @@ static NSColor *sideInsetColor, *borderedTopLineColor;
 static NSColor *resizeHandleColor, *resizeInsetColor;
 static NSGradient *gradient;
 static BOOL wasBorderedBar;
-static float scaleFactor = 0.0f;
+static CGFloat scaleFactor = 0.0f;
 
-@interface BWAnchoredButtonBar (BWABBPrivate)
+@interface BWAnchoredButtonBar ()
 - (void)drawResizeHandleInRect:(NSRect)handleRect withColor:(NSColor *)color;
 - (void)drawLastButtonInsetInRect:(NSRect)rect;
 - (BOOL)isInLastSubview;
@@ -273,7 +273,7 @@ static float scaleFactor = 0.0f;
 	[self setNeedsDisplay:YES];
 }
 
-- (void)setSelectedIndex:(int)anIndex
+- (void)setSelectedIndex:(NSInteger)anIndex
 {
 	if (anIndex == 0)
 	{

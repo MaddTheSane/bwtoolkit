@@ -92,12 +92,32 @@ static NSColor *backgroundColor;
 	return self;
 }
 
++ (NSScrollerStyle)preferredScrollerStyle
+{
+	return NSScrollerStyleLegacy;
+}
+
+- (NSScrollerStyle)scrollerStyle
+{
+	return NSScrollerStyleLegacy;
+}
+
+- (void)setScrollerStyle:(NSScrollerStyle)scrollerStyle
+{
+	// do nothing
+}
+
 + (CGFloat)scrollerWidth
 {
 	return slotVerticalFill.size.width + verticalPaddingLeft + verticalPaddingRight;
 }
 
 + (CGFloat)scrollerWidthForControlSize:(NSControlSize)controlSize 
+{
+	return slotVerticalFill.size.width + verticalPaddingLeft + verticalPaddingRight;
+}
+
++ (CGFloat)scrollerWidthForControlSize:(NSControlSize)controlSize scrollerStyle:(NSScrollerStyle)scrollerStyle
 {
 	return slotVerticalFill.size.width + verticalPaddingLeft + verticalPaddingRight;
 }

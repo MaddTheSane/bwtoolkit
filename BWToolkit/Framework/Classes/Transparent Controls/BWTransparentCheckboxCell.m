@@ -34,11 +34,6 @@ static NSShadow *contentShadow;
 	checkboxOnN = [[bundle imageForResource:@"TransparentCheckboxOnN"] retain];
 	checkboxOnP = [[bundle imageForResource:@"TransparentCheckboxOnP"] retain];
 	
-	[checkboxOffN setFlipped:YES];
-	[checkboxOffP setFlipped:YES];
-	[checkboxOnN setFlipped:YES];
-	[checkboxOnP setFlipped:YES];
-	
 	enabledColor = [[NSColor whiteColor] retain];
 	disabledColor = [[NSColor colorWithCalibratedWhite:0.6 alpha:1] retain];
 	
@@ -118,18 +113,25 @@ static NSShadow *contentShadow;
 {	
 	CGFloat y = NSMaxY(frame) - (frame.size.height - checkboxOffN.size.height) / 2.0 - 15;
 	CGFloat x = frame.origin.x + 1;
-	NSPoint point = NSMakePoint(x, roundf(y));
+	NSPoint point = NSMakePoint(x, round(y));
+	NSRect rect;
+	rect.origin = point;
 	
 	CGFloat alpha = [self isEnabled] ? 1.0 : 0.6;
 	
-	if ([self isHighlighted] && [self intValue])
-		[checkboxOnP drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
-	else if (![self isHighlighted] && [self intValue])
-		[checkboxOnN drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
-	else if (![self isHighlighted] && ![self intValue])
-		[checkboxOffN drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
-	else if ([self isHighlighted] && ![self intValue])
-		[checkboxOffP drawAtPoint:point fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha];
+	if ([self isHighlighted] && [self intValue]) {
+		rect.size = checkboxOnP.size;
+		[checkboxOnP drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha respectFlipped:YES hints:nil];
+	} else if (![self isHighlighted] && [self intValue]) {
+		rect.size = checkboxOnN.size;
+		[checkboxOnN drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha respectFlipped:YES hints:nil];
+	} else if (![self isHighlighted] && ![self intValue]) {
+		rect.size = checkboxOffN.size;
+		[checkboxOffN drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha respectFlipped:YES hints:nil];
+	} else if ([self isHighlighted] && ![self intValue]) {
+		rect.size = checkboxOffP.size;
+		[checkboxOffP drawInRect:rect fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:alpha respectFlipped:YES hints:nil];
+	}
 }
 
 - (NSControlSize)controlSize
