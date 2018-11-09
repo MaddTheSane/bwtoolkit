@@ -15,6 +15,6 @@ IB_DESIGNABLE
 }
 
 @property (copy, nonatomic) IBInspectable NSString *urlString;
-@property (retain, nonatomic) IBInspectable NSURL *url;
+@property (retain, nonatomic) NSURL *url;
 
 @end

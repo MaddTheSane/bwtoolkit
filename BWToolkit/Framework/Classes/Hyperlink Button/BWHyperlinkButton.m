@@ -34,11 +34,7 @@
 {
 	if ((self = [super initWithCoder:decoder]) != nil)
 	{
-		if ([decoder containsValueForKey:@"BWHBUrlString"]) {
-			[self setUrlString:[decoder decodeObjectForKey:@"BWHBUrlString"]];
-		} else {
-			[self setUrl:[decoder decodeObjectForKey:@"BWHBUrl"]];
-		}
+		[self setUrlString:[decoder decodeObjectForKey:@"BWHBUrlString"]];
 	}
 	return self;
 }
@@ -47,13 +43,15 @@
 {
     [super encodeWithCoder:coder];
 
-	[coder encodeObject:[self url] forKey:@"BWHBUrl"];
-} 
+	[coder encodeObject:[self urlString] forKey:@"BWHBUrlString"];
+}
 
 - (void)openURLInBrowser:(id)sender
 {
+#if !TARGET_INTERFACE_BUILDER
 	if (![self respondsToSelector:@selector(ibDidAddToDesignableDocument:)])
 		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:self.urlString]];
+#endif
 }
 
 - (void)resetCursorRects 
