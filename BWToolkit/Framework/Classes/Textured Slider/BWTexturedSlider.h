@@ -10,12 +10,13 @@
 
 @interface BWTexturedSlider : NSSlider
 {
-	int trackHeight, indicatorIndex;
+	int trackHeight;
+	NSInteger indicatorIndex;
 	NSRect sliderCellRect;
 	NSButton *minButton, *maxButton;
 }
 
-@property int indicatorIndex;
+@property (nonatomic) int indicatorIndex;
 @property (retain) NSButton *minButton;
 @property (retain) NSButton *maxButton;
 

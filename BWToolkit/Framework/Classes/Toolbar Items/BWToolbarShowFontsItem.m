@@ -13,7 +13,7 @@
 - (NSImage *)image
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[BWToolbarShowFontsItem class]];
-	NSImage *image = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"ToolbarItemFonts.tiff"]] autorelease];
+	NSImage *image = [bundle imageForResource:@"ToolbarItemFonts"];
 	
 	return image;
 }

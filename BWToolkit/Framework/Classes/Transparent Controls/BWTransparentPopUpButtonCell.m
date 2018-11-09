@@ -26,14 +26,14 @@ static NSColor *disabledColor, *enabledColor;
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentPopUpButtonCell class]];
 	
-	popUpFillN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpFillN.tiff"]];
-	popUpFillP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpFillP.tiff"]];
-	popUpRightN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpRightN.tiff"]];
-	popUpRightP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpRightP.tiff"]];
-	popUpLeftN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpLeftN.tiff"]];
-	popUpLeftP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpLeftP.tiff"]];
-	pullDownRightN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpPullDownRightN.tif"]];
-	pullDownRightP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentPopUpPullDownRightP.tif"]];
+	popUpFillN = [[bundle imageForResource:@"TransparentPopUpFillN"] retain];
+	popUpFillP = [[bundle imageForResource:@"TransparentPopUpFillP"] retain];
+	popUpRightN = [[bundle imageForResource:@"TransparentPopUpRightN"] retain];
+	popUpRightP = [[bundle imageForResource:@"TransparentPopUpRightP"] retain];
+	popUpLeftN = [[bundle imageForResource:@"TransparentPopUpLeftN"] retain];
+	popUpLeftP = [[bundle imageForResource:@"TransparentPopUpLeftP"] retain];
+	pullDownRightN = [[bundle imageForResource:@"TransparentPopUpPullDownRightN"] retain];
+	pullDownRightP = [[bundle imageForResource:@"TransparentPopUpPullDownRightP"] retain];
 	
 	enabledColor = [[NSColor whiteColor] retain];
 	disabledColor = [[NSColor colorWithCalibratedWhite:0.6 alpha:1] retain];
@@ -65,8 +65,6 @@ static NSColor *disabledColor, *enabledColor;
 	
 	if (image != nil)
 	{
-		[image setScalesWhenResized:NO];
-
 		if ([[image name] isEqualToString:@"NSActionTemplate"])
 			[image setSize:NSMakeSize(10,10)];
 		

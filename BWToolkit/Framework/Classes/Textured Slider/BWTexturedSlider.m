@@ -20,19 +20,22 @@ static float imageInset = 25;
 
 + (void)initialize 
 {
-	NSBundle *bundle = [NSBundle bundleForClass:[BWTexturedSlider class]];
-	
-	quietSpeakerImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderSpeakerQuiet.png"]];
-	loudSpeakerImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderSpeakerLoud.png"]];
-	smallPhotoImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderPhotoSmall.tif"]];
-	largePhotoImage	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderPhotoLarge.tif"]];
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		NSBundle *bundle = [NSBundle bundleForClass:[BWTexturedSlider class]];
+		
+		quietSpeakerImage = [[bundle imageForResource:@"TexturedSliderSpeakerQuiet"] retain];
+		loudSpeakerImage = [[bundle imageForResource:@"TexturedSliderSpeakerLoud"] retain];
+		smallPhotoImage = [[bundle imageForResource:@"TexturedSliderPhotoSmall"] retain];
+		largePhotoImage	= [[bundle imageForResource:@"TexturedSliderPhotoLarge"] retain];
+	});
 }
 
 - (id)initWithCoder:(NSCoder *)decoder
 {
 	if ((self = [super initWithCoder:decoder]) != nil)
 	{
-		indicatorIndex = [decoder decodeIntForKey:@"BWTSIndicatorIndex"];
+		indicatorIndex = [decoder decodeIntegerForKey:@"BWTSIndicatorIndex"];
 		[self setMinButton:[decoder decodeObjectForKey:@"BWTSMinButton"]];
 		[self setMaxButton:[decoder decodeObjectForKey:@"BWTSMaxButton"]];	
 	}
@@ -43,7 +46,7 @@ static float imageInset = 25;
 {
     [super encodeWithCoder:coder];
 	
-	[coder encodeInt:[self indicatorIndex] forKey:@"BWTSIndicatorIndex"];
+	[coder encodeInteger:[self indicatorIndex] forKey:@"BWTSIndicatorIndex"];
 	[coder encodeObject:[self minButton] forKey:@"BWTSMinButton"];
 	[coder encodeObject:[self maxButton] forKey:@"BWTSMaxButton"];
 }

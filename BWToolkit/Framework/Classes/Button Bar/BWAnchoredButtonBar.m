@@ -307,6 +307,7 @@ static float scaleFactor = 0.0f;
 	if ([splitView delegate] == self)
 		[splitView setDelegate:nil];
 	
+	[super dealloc];
 }
 
 #pragma mark NSSplitView Delegate Methods

@@ -19,11 +19,11 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 	{
 		NSBundle *bundle = [NSBundle bundleForClass:[BWTexturedSliderCell class]];
 
-		trackLeftImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderTrackLeft.tiff"]];
-		trackFillImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderTrackFill.tiff"]];
-		trackRightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderTrackRight.tiff"]];
-		thumbPImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderThumbP.tiff"]];
-		thumbNImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TexturedSliderThumbN.tiff"]];
+		trackLeftImage = [[bundle imageForResource:@"TexturedSliderTrackLeft"] retain];
+		trackFillImage = [[bundle imageForResource:@"TexturedSliderTrackFill"] retain];
+		trackRightImage = [[bundle imageForResource:@"TexturedSliderTrackRight"] retain];
+		thumbPImage = [[bundle imageForResource:@"TexturedSliderThumbP"] retain];
+		thumbNImage = [[bundle imageForResource:@"TexturedSliderThumbN"] retain];
 	}
 }
 

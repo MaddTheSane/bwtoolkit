@@ -18,13 +18,13 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 	{
 		NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentSliderCell class]];
 		
-		trackLeftImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderTrackLeft.tiff"]];
-		trackFillImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderTrackFill.tiff"]];
-		trackRightImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderTrackRight.tiff"]];
-		thumbPImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderThumbP.tiff"]];
-		thumbNImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderThumbN.tiff"]];
-		triangleThumbNImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderTriangleThumbN.tiff"]];
-		triangleThumbPImage = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentSliderTriangleThumbP.tiff"]];
+		trackLeftImage = [[bundle imageForResource:@"TransparentSliderTrackLeft"] retain];
+		trackFillImage = [[bundle imageForResource:@"TransparentSliderTrackFill"] retain];
+		trackRightImage = [[bundle imageForResource:@"TransparentSliderTrackRight"] retain];
+		thumbPImage = [[bundle imageForResource:@"TransparentSliderThumbP"] retain];
+		thumbNImage = [[bundle imageForResource:@"TransparentSliderThumbN"] retain];
+		triangleThumbNImage = [[bundle imageForResource:@"TransparentSliderTriangleThumbN"] retain];
+		triangleThumbPImage = [[bundle imageForResource:@"TransparentSliderTriangleThumbP"] retain];
 	}
 }
 
@@ -104,7 +104,7 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 		drawPoint.x++;
 	}
 	
-	[drawImage compositeToPoint:drawPoint operation:NSCompositeSourceOver];
+	[drawImage drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1];
 }
 
 - (BOOL)_usesCustomTrackImage

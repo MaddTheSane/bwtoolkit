@@ -29,10 +29,10 @@ static NSShadow *contentShadow;
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentCheckboxCell class]];
 	
-	checkboxOffN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentCheckboxOffN.tiff"]];
-	checkboxOffP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentCheckboxOffP.tiff"]];
-	checkboxOnN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentCheckboxOnN.tiff"]];
-	checkboxOnP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentCheckboxOnP.tiff"]];
+	checkboxOffN = [[bundle imageForResource:@"TransparentCheckboxOffN"] retain];
+	checkboxOffP = [[bundle imageForResource:@"TransparentCheckboxOffP"] retain];
+	checkboxOnN = [[bundle imageForResource:@"TransparentCheckboxOnN"] retain];
+	checkboxOnP = [[bundle imageForResource:@"TransparentCheckboxOnP"] retain];
 	
 	[checkboxOffN setFlipped:YES];
 	[checkboxOffP setFlipped:YES];

@@ -64,13 +64,12 @@ static float arrowHeight = 6.0;
 
 - (NSImage *)arrowInHighlightedState:(BOOL)isHighlighted
 {
-	float scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+	CGFloat scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
 	
 	NSImage *arrowImage = [[[NSImage alloc] init] autorelease];
 	[arrowImage setSize:NSMakeSize(arrowWidth, arrowHeight)];
-	[arrowImage setFlipped:YES];
 	
-	[arrowImage lockFocus];
+	[arrowImage lockFocusFlipped:YES];
 	
 	NSPoint p1 = NSMakePoint(0,0);
 	NSPoint p2 = NSMakePoint(arrowWidth,0);

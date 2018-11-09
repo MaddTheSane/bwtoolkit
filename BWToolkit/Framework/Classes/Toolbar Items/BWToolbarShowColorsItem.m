@@ -13,7 +13,7 @@
 - (NSImage *)image
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[BWToolbarShowColorsItem class]];
-	NSImage *image = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"ToolbarItemColors.tiff"]] autorelease];
+	NSImage *image = [bundle imageForResource:@"ToolbarItemColors"];
 	
 	return image;
 }

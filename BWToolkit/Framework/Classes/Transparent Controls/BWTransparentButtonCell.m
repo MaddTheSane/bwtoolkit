@@ -24,17 +24,20 @@ static NSColor *disabledColor, *enabledColor;
 
 + (void)initialize;
 {
-	NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentButtonCell class]];
-	
-	buttonLeftN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonLeftN.tiff"]];
-	buttonFillN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonFillN.tiff"]];
-	buttonRightN = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonRightN.tiff"]];
-	buttonLeftP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonLeftP.tiff"]];
-	buttonFillP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonFillP.tiff"]];
-	buttonRightP = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentButtonRightP.tiff"]];
-
-	enabledColor = [[NSColor whiteColor] retain];
-	disabledColor = [[NSColor colorWithCalibratedWhite:0.6 alpha:1] retain];
+	static dispatch_once_t onceToken;
+	dispatch_once(&onceToken, ^{
+		NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentButtonCell class]];
+		
+		buttonLeftN = [[bundle imageForResource:@"TransparentButtonLeftN"] retain];
+		buttonFillN = [[bundle imageForResource:@"TransparentButtonFillN"] retain];
+		buttonRightN = [[bundle imageForResource:@"TransparentButtonRightN"] retain];
+		buttonLeftP = [[bundle imageForResource:@"TransparentButtonLeftP"] retain];
+		buttonFillP = [[bundle imageForResource:@"TransparentButtonFillP"] retain];
+		buttonRightP = [[bundle imageForResource:@"TransparentButtonRightP"] retain];
+		
+		enabledColor = [[NSColor whiteColor] retain];
+		disabledColor = [[NSColor colorWithCalibratedWhite:0.6 alpha:1] retain];
+	});
 }
 
 - (void)drawBezelWithFrame:(NSRect)cellFrame inView:(NSView *)controlView

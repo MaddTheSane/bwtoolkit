@@ -28,8 +28,8 @@ static NSToolbar *editableToolbar;
 - (void)initialSetup;
 - (void)toggleActiveView:(id)sender;
 - (NSString *)identifierAtIndex:(int)index;
-- (void)switchToItemAtIndex:(int)anIndex animate:(BOOL)flag;
-- (int)toolbarIndexFromSelectableIndex:(int)selectableIndex;
+- (void)switchToItemAtIndex:(NSInteger)anIndex animate:(BOOL)flag;
+- (NSInteger)toolbarIndexFromSelectableIndex:(NSInteger)selectableIndex;
 - (void)selectInitialItem;
 - (void)selectItemAtIndex:(int)anIndex;
 // IBDocument methods
@@ -44,8 +44,8 @@ static NSToolbar *editableToolbar;
 @interface BWSelectableToolbar ()
 @property (retain) BWSelectableToolbarHelper *helper;
 @property (readonly) NSMutableArray *labels;
-@property (copy) NSMutableDictionary *enabledByIdentifier;
-@property BOOL isPreferencesToolbar;
+@property (nonatomic, copy) NSMutableDictionary *enabledByIdentifier;
+@property (nonatomic) BOOL isPreferencesToolbar;
 @end
 
 @implementation BWSelectableToolbar
@@ -167,7 +167,7 @@ static NSToolbar *editableToolbar;
 
 - (void)selectFirstItem
 {
-	int toolbarIndex = [self toolbarIndexFromSelectableIndex:0];
+	NSInteger toolbarIndex = [self toolbarIndexFromSelectableIndex:0];
 	[self switchToItemAtIndex:toolbarIndex animate:NO];
 }
 
@@ -175,7 +175,7 @@ static NSToolbar *editableToolbar;
 {
 	// When the window launches, we want to select the toolbar item that was previously selected.
 	// So we have to find the toolbar index for our saved selected identifier.
-	int toolbarIndex;
+	NSInteger toolbarIndex;
 	
 	if ([helper selectedIdentifier] != nil)
 		toolbarIndex = [itemIdentifiers indexOfObject:[helper selectedIdentifier]];
@@ -254,9 +254,9 @@ static NSToolbar *editableToolbar;
 	}
 }
 
-- (int)toolbarIndexFromSelectableIndex:(int)selectableIndex
+- (NSInteger)toolbarIndexFromSelectableIndex:(NSInteger)selectableIndex
 {
-	NSMutableArray *selectableItems = [[[NSMutableArray alloc] init] autorelease];
+	NSMutableArray<NSToolbarItem*> *selectableItems = [[[NSMutableArray alloc] init] autorelease];
 	
 	for (NSToolbarItem *currentItem in [[self editableToolbar] items]) 
 	{
@@ -271,9 +271,9 @@ static NSToolbar *editableToolbar;
 	if (selectableItems.count == 0)
 		return 0;
 	
-	NSString *item = [selectableItems objectAtIndex:selectableIndex];
+	NSToolbarItem *item = [selectableItems objectAtIndex:selectableIndex];
 	
-	int toolbarIndex = [[[self editableToolbar] items] indexOfObject:item];
+	NSInteger toolbarIndex = [[[self editableToolbar] items] indexOfObject:item];
 	
 	return toolbarIndex;
 }
@@ -547,7 +547,7 @@ static NSToolbar *editableToolbar;
 
 #pragma mark Selection Switching
 
-- (void)switchToItemAtIndex:(int)anIndex animate:(BOOL)shouldAnimate
+- (void)switchToItemAtIndex:(NSInteger)anIndex animate:(BOOL)shouldAnimate
 {	
 	NSString *oldIdentifier = [helper selectedIdentifier];
 	

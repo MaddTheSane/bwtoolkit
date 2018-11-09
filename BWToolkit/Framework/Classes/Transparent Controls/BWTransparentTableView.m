@@ -74,8 +74,8 @@ static NSColor *rowColor, *altRowColor, *highlightColor;
 {
 	NSRange			aVisibleRowIndexes = [self rowsInRect:theClipRect];
 	NSIndexSet *	aSelectedRowIndexes = [self selectedRowIndexes];
-	int				aRow = aVisibleRowIndexes.location;
-	int				anEndRow = aRow + aVisibleRowIndexes.length;
+	NSInteger		aRow = aVisibleRowIndexes.location;
+	NSInteger		anEndRow = aRow + aVisibleRowIndexes.length;
 
     for (aRow; aRow < anEndRow; aRow++)
     {

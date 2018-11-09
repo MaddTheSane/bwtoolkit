@@ -41,20 +41,20 @@ static NSColor *backgroundColor;
 	NSBundle *bundle = [NSBundle bundleForClass:[BWTransparentScroller class]];
 	
 	// Vertical scroller
-	knobTop				= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobTop.tif"]];
-	knobVerticalFill	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobVerticalFill.tif"]];
-	knobBottom			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobBottom.tif"]];
-	slotTop				= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotTop.tif"]];
-	slotVerticalFill	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotVerticalFill.tif"]];
-	slotBottom			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotBottom.tif"]];
+	knobTop				= [[bundle imageForResource:@"TransparentScrollerKnobTop"] retain];
+	knobVerticalFill	= [[bundle imageForResource:@"TransparentScrollerKnobVerticalFill"] retain];
+	knobBottom			= [[bundle imageForResource:@"TransparentScrollerKnobBottom"] retain];
+	slotTop				= [[bundle imageForResource:@"TransparentScrollerSlotTop"] retain];
+	slotVerticalFill	= [[bundle imageForResource:@"TransparentScrollerSlotVerticalFill"] retain];
+	slotBottom			= [[bundle imageForResource:@"TransparentScrollerSlotBottom"] retain];
 
 	// Horizontal scroller
-	knobLeft			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobLeft.tif"]];
-	knobHorizontalFill	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobHorizontalFill.tif"]];
-	knobRight			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerKnobRight.tif"]];
-	slotLeft			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotLeft.tif"]];
-	slotHorizontalFill	= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotHorizontalFill.tif"]];
-	slotRight			= [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"TransparentScrollerSlotRight.tif"]];
+	knobLeft			= [[bundle imageForResource:@"TransparentScrollerKnobLeft"] retain];
+	knobHorizontalFill	= [[bundle imageForResource:@"TransparentScrollerKnobHorizontalFill"] retain];
+	knobRight			= [[bundle imageForResource:@"TransparentScrollerKnobRight"] retain];
+	slotLeft			= [[bundle imageForResource:@"TransparentScrollerSlotLeft"] retain];
+	slotHorizontalFill	= [[bundle imageForResource:@"TransparentScrollerSlotHorizontalFill"] retain];
+	slotRight			= [[bundle imageForResource:@"TransparentScrollerSlotRight"] retain];
 	
 	backgroundColor		= [[NSColor colorWithCalibratedWhite:0.13 alpha:0.855] retain];
 	

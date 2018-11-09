@@ -68,8 +68,8 @@ static float arrowInset = 11.0;
 	[contentShadow setShadowOffset:NSMakeSize(0,-1)];
 	[contentShadow setShadowColor:[NSColor colorWithCalibratedWhite:(255.0f / 255.0f) alpha:0.75]];
 
-	NSBundle *bundle = [NSBundle bundleForClass:[BWAnchoredPopUpButtonCell class]];		
-	pullDownArrow = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"ButtonBarPullDownArrow.pdf"]];
+	NSBundle *bundle = [NSBundle bundleForClass:[BWAnchoredPopUpButtonCell class]];
+	pullDownArrow = [[bundle imageForResource:@"ButtonBarPullDownArrow"] retain];
 }
 
 - (NSControlSize)controlSize

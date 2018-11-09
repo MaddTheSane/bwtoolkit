@@ -29,7 +29,7 @@ static float scaleFactor = 1.0f;
 
 - (BOOL)subviewIsCollapsible:(NSView *)subview;
 - (BOOL)subviewIsCollapsed:(NSView *)subview;
-- (int)collapsibleSubviewIndex;
+- (NSInteger)collapsibleSubviewIndex;
 - (NSView *)collapsibleSubview;
 - (BOOL)hasCollapsibleSubview;
 - (BOOL)collapsibleSubviewIsCollapsed;
@@ -65,8 +65,8 @@ static float scaleFactor = 1.0f;
     gradient           = [[NSGradient alloc] initWithStartingColor:gradientStartColor endingColor:gradientEndColor];
 
 	NSBundle *bundle = [NSBundle bundleForClass:[BWSplitView class]];
-	dimpleImageBitmap  = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"GradientSplitViewDimpleBitmap.tif"]];
-	dimpleImageVector  = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"GradientSplitViewDimpleVector.pdf"]];
+	dimpleImageBitmap  = [[bundle imageForResource:@"GradientSplitViewDimple"] retain];
+	dimpleImageVector  = [[bundle imageForResource:@"GradientSplitViewDimple"] retain];
     [dimpleImageBitmap setFlipped:YES];
 	[dimpleImageVector setFlipped:YES];
 }
@@ -200,7 +200,7 @@ static float scaleFactor = 1.0f;
 - (BOOL)subviewIsCollapsible:(NSView *)subview;
 {
 	// check if this is the collapsible subview
-	int subviewIndex = [[self subviews] indexOfObject:subview];
+	NSInteger subviewIndex = [[self subviews] indexOfObject:subview];
 	
 	BOOL isCollapsibleSubview = (([self collapsiblePopupSelection] == 1 && subviewIndex == 0) || ([self collapsiblePopupSelection] == 2 && subviewIndex == [[self subviews] count] - 1));
 	
@@ -219,7 +219,7 @@ static float scaleFactor = 1.0f;
 	return [self subviewIsCollapsed:[self collapsibleSubview]];
 }
 
-- (int)collapsibleSubviewIndex;
+- (NSInteger)collapsibleSubviewIndex;
 {
 	switch ([self collapsiblePopupSelection]) {
 		case 1:
@@ -236,7 +236,7 @@ static float scaleFactor = 1.0f;
 
 - (NSView *)collapsibleSubview;
 {
-	int index = [self collapsibleSubviewIndex];
+	NSInteger index = [self collapsibleSubviewIndex];
 	
 	if (index >= 0)
 		return [[self subviews] objectAtIndex:index];
@@ -269,7 +269,7 @@ static float scaleFactor = 1.0f;
 	isAnimating = NO;
 }
 
-- (float)animationDuration
+- (NSTimeInterval)animationDuration
 {
 	if ([NSEvent bwShiftKeyIsDown])
 		return 2.0;
@@ -313,7 +313,7 @@ static float scaleFactor = 1.0f;
 	if ([self hasCollapsibleSubview])
 	{
 		NSMutableDictionary *tempMinValues = [[self minValues] mutableCopy];
-		[tempMinValues setObject:minSize forKey:[NSNumber numberWithInt:[[self subviews] indexOfObject:[self collapsibleSubview]]]];
+		[tempMinValues setObject:minSize forKey:@([[self subviews] indexOfObject:[self collapsibleSubview]])];
 		[self setMinValues:tempMinValues];
 	}
 }
@@ -323,7 +323,7 @@ static float scaleFactor = 1.0f;
 	if ([self hasCollapsibleSubview])
 	{
 		NSMutableDictionary *tempMinValues = [[self minValues] mutableCopy];
-		[tempMinValues removeObjectForKey:[NSNumber numberWithInt:[[self subviews] indexOfObject:[self collapsibleSubview]]]];
+		[tempMinValues removeObjectForKey:@([[self subviews] indexOfObject:[self collapsibleSubview]])];
 		[self setMinValues:tempMinValues];
 	}
 }
@@ -348,7 +348,7 @@ static float scaleFactor = 1.0f;
 	// Check to see if the collapsible subview has a minimum width/height and record it.
 	// We'll later remove the min size temporarily while animating and then restore it.
 	BOOL hasMinSize = NO;
-	NSNumber *minSize = [minValues objectForKey:[NSNumber numberWithInt:[[self subviews] indexOfObject:[self collapsibleSubview]]]];
+	NSNumber *minSize = [minValues objectForKey:@([[self subviews] indexOfObject:[self collapsibleSubview]])];
 	minSize = [minSize copy];
 	
 	if (minSize != nil || [minSize intValue] != 0)
@@ -531,7 +531,7 @@ static float scaleFactor = 1.0f;
 		[secondaryDelegate isKindOfClass:[BWAnchoredButtonBar class]] == NO)
 		return [secondaryDelegate splitView:sender canCollapseSubview:subview];
 	
-	int subviewIndex = [[self subviews] indexOfObject:subview];
+	NSInteger subviewIndex = [[self subviews] indexOfObject:subview];
 	
 	if ([self respondsToSelector:@selector(ibDidAddToDesignableDocument:)] == NO)
 	{
@@ -550,7 +550,7 @@ static float scaleFactor = 1.0f;
 		[secondaryDelegate isKindOfClass:[BWAnchoredButtonBar class]] == NO)
 		return [secondaryDelegate splitView:splitView shouldCollapseSubview:subview forDoubleClickOnDividerAtIndex:dividerIndex];
 	
-	int subviewIndex = [[self subviews] indexOfObject:subview];
+	NSInteger subviewIndex = [[self subviews] indexOfObject:subview];
 	
 	if ([self respondsToSelector:@selector(ibDidAddToDesignableDocument:)] == NO)
 	{
@@ -597,7 +597,7 @@ static float scaleFactor = 1.0f;
 	}
 	
 	// Max from the next subview
-	int nextOffset = offset + 1;
+	NSInteger nextOffset = offset + 1;
 	if ([[self subviews] count] > nextOffset)
 	{
 		CGFloat minValue = [self subviewMinimumSize:nextOffset];
@@ -640,7 +640,7 @@ static float scaleFactor = 1.0f;
 	}
 	
 	// Min from the next subview
-	int nextOffset = offset + 1;
+	NSInteger nextOffset = offset + 1;
 	if ([[self subviews] count] > nextOffset)
 	{
 		CGFloat maxValue = [self subviewMaximumSize:nextOffset];
@@ -848,7 +848,7 @@ static float scaleFactor = 1.0f;
 	// Calculate resizable preferred propotions and set non-resizable preferred sizes
 	for (NSView *subview in [self subviews])
 	{
-		int index = [[self subviews] indexOfObject:subview];
+		NSInteger index = [[self subviews] indexOfObject:subview];
 		
 		if ([self subviewIsResizable:subview])
 		{
@@ -898,7 +898,7 @@ static float scaleFactor = 1.0f;
 	// Check if any of the subviews have changed between resizable and non-resizable
 	for (NSView *subview in [self subviews])
 	{
-		int index = [[self subviews] indexOfObject:subview];
+		NSInteger index = [[self subviews] indexOfObject:subview];
 		
 		if ([self subviewIsResizable:subview] != [[[self stateForLastPreferredCalculations] objectAtIndex:index] boolValue])
 			return NO;
@@ -917,7 +917,7 @@ static float scaleFactor = 1.0f;
 	NSMutableDictionary *preferredProportions = [[self resizableSubviewPreferredProportion] mutableCopy];
 	NSMutableDictionary *preferredSizes = [[self nonresizableSubviewPreferredSize] mutableCopy];
 	
-	NSNumber *key = [NSNumber numberWithInt:[self collapsibleSubviewIndex]];
+	NSNumber *key = @([self collapsibleSubviewIndex]);
 	NSView *subview = [self collapsibleSubview];
 	
 	// If the collapsible subview is collapsed, we put aside its preferred propotion/size
@@ -1033,7 +1033,7 @@ static float scaleFactor = 1.0f;
 	if (RESIZE_DEBUG_LOGS) NSLog(@"nonresizableSubviewsTotalPreferredSize: %f", nonresizableSubviewsTotalPreferredSize);
 	
 	// Calculate divider thickness total
-	int dividerCount = [[self subviews] count] - 1;
+	NSInteger dividerCount = [[self subviews] count] - 1;
 	if ([self collapsibleSubviewIsCollapsed] && dividerCanCollapse) dividerCount--;
 	CGFloat dividerThicknessTotal = [self dividerThickness] * dividerCount;		
 	if (RESIZE_DEBUG_LOGS) NSLog(@"dividerThicknessTotal: %f", dividerThicknessTotal);
@@ -1046,7 +1046,7 @@ static float scaleFactor = 1.0f;
 	if ([self collapsibleSubviewIsCollapsed])
 	{
 		[newSubviewSizes setObject:[NSNumber numberWithFloat:0.0]
-							forKey:[NSNumber numberWithInt:[self collapsibleSubviewIndex]]];
+							forKey:@([self collapsibleSubviewIndex])];
 	}
 	
 	// Set non-resizable subviews to preferred size
@@ -1054,8 +1054,8 @@ static float scaleFactor = 1.0f;
 	
 	// Set sizes of resizable views based on proportions (could be negative)
 	CGFloat resizableSubviewAvailableSizeUsed = 0;
-	int resizableSubviewCounter = 0;
-	int resizableSubviewCount = [resizableSubviewPreferredProportion count];
+	NSInteger resizableSubviewCounter = 0;
+	NSInteger resizableSubviewCount = [resizableSubviewPreferredProportion count];
 	for (NSNumber *key in [resizableSubviewPreferredProportion allKeys])
 	{
 		resizableSubviewCounter++;
@@ -1162,8 +1162,8 @@ static float scaleFactor = 1.0f;
 		
 		// Set sizes of nonresizable views based on proportions (could be negative)
 		CGFloat nonresizableSubviewAvailableSizeUsed = 0;
-		int nonresizableSubviewCounter = 0;
-		int nonresizableSubviewCount = [nonresizableSubviewPreferredProportion count];
+		NSInteger nonresizableSubviewCounter = 0;
+		NSInteger nonresizableSubviewCount = [nonresizableSubviewPreferredProportion count];
 		for (NSNumber *key in [nonresizableSubviewPreferredProportion allKeys])
 		{
 			nonresizableSubviewCounter++;

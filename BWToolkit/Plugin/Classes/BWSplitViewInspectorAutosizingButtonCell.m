@@ -34,11 +34,11 @@ static float interiorInset = 7.0;
 	insetLineColor = [[[NSColor whiteColor] colorWithAlphaComponent:0.19] retain];
 	
 	NSBundle *bundle = [NSBundle bundleForClass:[BWSplitViewInspectorAutosizingButtonCell class]];
-	blueArrowStart = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Inspector-SplitViewArrowBlueLeft.tif"]];
-	blueArrowEnd = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Inspector-SplitViewArrowBlueRight.tif"]];
-	redArrowStart = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Inspector-SplitViewArrowRedLeft.tif"]];
-	redArrowFill = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Inspector-SplitViewArrowRedFill.tif"]];
-	redArrowEnd = [[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Inspector-SplitViewArrowRedRight.tif"]];
+	blueArrowStart = [[bundle imageForResource:@"Inspector-SplitViewArrowBlueLeft"] retain];
+	blueArrowEnd = [[bundle imageForResource:@"Inspector-SplitViewArrowBlueRight"] retain];
+	redArrowStart = [[bundle imageForResource:@"Inspector-SplitViewArrowRedLeft"] retain];
+	redArrowFill = [[bundle imageForResource:@"Inspector-SplitViewArrowRedFill"] retain];
+	redArrowEnd = [[bundle imageForResource:@"Inspector-SplitViewArrowRedRight"] retain];
 }
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView

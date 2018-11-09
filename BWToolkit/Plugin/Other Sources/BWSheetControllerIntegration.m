@@ -15,7 +15,7 @@
 {
 	NSBundle *bundle = [NSBundle bundleForClass:[BWSheetController class]];
 	
-	NSImage *image = [[[NSImage alloc] initWithContentsOfFile:[bundle pathForImageResource:@"Library-SheetController.tif"]] autorelease];
+	NSImage *image = [bundle imageForResource:@"Library-SheetController"];
 	
 	return image;
 }
