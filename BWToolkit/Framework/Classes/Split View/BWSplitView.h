@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWSplitView : NSSplitView <NSSplitViewDelegate>
 {
 	NSColor *color;
@@ -29,14 +30,14 @@
 @property (strong) NSButton *toggleCollapseButton;
 @property (assign) id secondaryDelegate;
 @property (nonatomic) BOOL collapsibleSubviewCollapsed;
-@property NSInteger collapsiblePopupSelection;
-@property BOOL dividerCanCollapse;
+@property IBInspectable NSInteger collapsiblePopupSelection;
+@property IBInspectable BOOL dividerCanCollapse;
 
 // The split view divider color
-@property (copy) NSColor *color;
+@property (copy) IBInspectable NSColor *color;
 
 // Flag for whether a custom divider color is enabled. If not, the standard divider color is used.
-@property (nonatomic) BOOL colorIsEnabled;
+@property (nonatomic) IBInspectable BOOL colorIsEnabled;
 
 // Call this method to collapse or expand a subview configured as collapsible in the IB inspector.
 - (IBAction)toggleCollapse:(id)sender;

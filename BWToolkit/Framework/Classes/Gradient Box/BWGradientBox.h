@@ -18,11 +18,8 @@ IB_DESIGNABLE
 	BOOL hasTopBorder, hasBottomBorder, hasGradient, hasFillColor;
 }
 
-IBInspectable
-@property (nonatomic, strong) NSColor *fillStartingColor, *fillEndingColor, *fillColor, *topBorderColor, *bottomBorderColor;
-IBInspectable
-@property CGFloat topInsetAlpha, bottomInsetAlpha;
-IBInspectable
-@property BOOL hasTopBorder, hasBottomBorder, hasGradient, hasFillColor;
+@property (nonatomic, strong) IBInspectable NSColor *fillStartingColor, *fillEndingColor, *fillColor, *topBorderColor, *bottomBorderColor;
+@property IBInspectable CGFloat topInsetAlpha, bottomInsetAlpha;
+@property IBInspectable BOOL hasTopBorder, hasBottomBorder, hasGradient, hasFillColor;
 
 @end

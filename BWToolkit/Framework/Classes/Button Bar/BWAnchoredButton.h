@@ -8,6 +8,7 @@
 
 #import <Cocoa/Cocoa.h>
 
+IB_DESIGNABLE
 @interface BWAnchoredButton : NSButton 
 {
 	BOOL isAtLeftEdgeOfBar;
@@ -15,7 +16,7 @@
 	NSPoint topAndLeftInset;
 }
 
-@property BOOL isAtLeftEdgeOfBar;
-@property BOOL isAtRightEdgeOfBar;
+@property IBInspectable BOOL isAtLeftEdgeOfBar;
+@property IBInspectable BOOL isAtRightEdgeOfBar;
 
 @end

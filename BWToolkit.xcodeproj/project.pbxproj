@@ -120,7 +120,7 @@
 		C7D4AD0A12C939E8000FD3F9 /* NSEvent+BWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = CAB82ED30F514F39006519E3 /* NSEvent+BWAdditions.m */; };
 		C7D4AD0B12C939E8000FD3F9 /* BWHyperlinkButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE04ED0FD753DB001A1C3F /* BWHyperlinkButton.m */; };
 		C7D4AD0C12C939E8000FD3F9 /* BWHyperlinkButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE04F10FD7549A001A1C3F /* BWHyperlinkButtonCell.m */; };
-		C7D4AD0D12C939E8000FD3F9 /* BWGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07740FD79453001A1C3F /* BWGradientBox.m */; };
+		C7D4AD0D12C939E8000FD3F9 /* BWGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07740FD79453001A1C3F /* BWGradientBox.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C7D4AD0E12C939E8000FD3F9 /* BWStyledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE077B0FD79CE9001A1C3F /* BWStyledTextField.m */; };
 		C7D4AD0F12C939E8000FD3F9 /* BWStyledTextFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07C10FD7BB18001A1C3F /* BWStyledTextFieldCell.m */; };
 		C7D4AD1212C939E8000FD3F9 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
@@ -320,7 +320,7 @@
 		CAEE05620FD764AB001A1C3F /* BWHyperlinkButtonInspector.xib in Resources */ = {isa = PBXBuildFile; fileRef = CAEE05610FD764AB001A1C3F /* BWHyperlinkButtonInspector.xib */; };
 		CAEE05660FD76542001A1C3F /* BWHyperlinkButtonIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE05650FD76542001A1C3F /* BWHyperlinkButtonIntegration.m */; };
 		CAEE07750FD79453001A1C3F /* BWGradientBox.h in Headers */ = {isa = PBXBuildFile; fileRef = CAEE07730FD79453001A1C3F /* BWGradientBox.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CAEE07760FD79453001A1C3F /* BWGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07740FD79453001A1C3F /* BWGradientBox.m */; };
+		CAEE07760FD79453001A1C3F /* BWGradientBox.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07740FD79453001A1C3F /* BWGradientBox.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CAEE077C0FD79CE9001A1C3F /* BWStyledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = CAEE077A0FD79CE9001A1C3F /* BWStyledTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CAEE077D0FD79CE9001A1C3F /* BWStyledTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE077B0FD79CE9001A1C3F /* BWStyledTextField.m */; };
 		CAEE07860FD79D91001A1C3F /* BWStyledTextFieldInspector.m in Sources */ = {isa = PBXBuildFile; fileRef = CAEE07850FD79D91001A1C3F /* BWStyledTextFieldInspector.m */; };
@@ -1802,7 +1802,7 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BWToolkit_Prefix.pch;
+				GCC_PREFIX_HEADER = "BWToolkit/Plugin/Other Sources/BWToolkit_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = BWToolkit/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkit;
@@ -1822,7 +1822,7 @@
 				);
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = BWToolkit_Prefix.pch;
+				GCC_PREFIX_HEADER = "BWToolkit/Plugin/Other Sources/BWToolkit_Prefix.pch";
 				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				INFOPLIST_FILE = BWToolkit/Info.plist;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkit;
