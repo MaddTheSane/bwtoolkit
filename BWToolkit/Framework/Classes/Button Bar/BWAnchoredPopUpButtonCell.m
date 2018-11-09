@@ -6,6 +6,7 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWAnchoredPopUpButtonCell.h"
 #import "BWAnchoredPopUpButton.h"
 #import "BWAnchoredButtonBar.h"
@@ -19,7 +20,7 @@ static NSColor *borderedSideBorderColor, *borderedTopBorderColor;
 static NSGradient *fillGradient;
 static NSImage *pullDownArrow;
 static NSShadow *contentShadow;
-static float arrowInset = 11.0;
+static CGFloat arrowInset = 11.0;
 
 @interface NSCell (BWAPUBCPrivate)
 - (NSDictionary *)_textAttributes;
@@ -157,13 +158,13 @@ static float arrowInset = 11.0;
 	if ([self pullsDown])
 	{
 		// Draw pull-down arrow
-		drawPoint.y = roundf(cellFrame.size.height / 2) - 2;
+		drawPoint.y = round(cellFrame.size.height / 2) - 2;
 		[arrow drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 	}
 	else
 	{
 		// Draw bottom pop-up arrow
-		drawPoint.y = roundf(cellFrame.size.height / 2) - 4;
+		drawPoint.y = round(cellFrame.size.height / 2) - 4;
 		[arrow drawAtPoint:drawPoint fromRect:NSZeroRect operation:NSCompositeSourceOver fraction:1.0];
 		
 		// Draw top pop-up arrow

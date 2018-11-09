@@ -6,23 +6,24 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWTransparentScroller.h"
 
 // Vertical scroller
 static NSImage *knobTop, *knobVerticalFill, *knobBottom, *slotTop, *slotVerticalFill, *slotBottom;
-static float verticalPaddingLeft = 0.0;
-static float verticalPaddingRight = 1.0;
-static float verticalPaddingTop = 2.0;
-static float verticalPaddingBottom = 0.0;
-static float minKnobHeight;
+static CGFloat verticalPaddingLeft = 0.0;
+static CGFloat verticalPaddingRight = 1.0;
+static CGFloat verticalPaddingTop = 2.0;
+static CGFloat verticalPaddingBottom = 0.0;
+static CGFloat minKnobHeight;
 
 // Horizontal scroller
 static NSImage *knobLeft, *knobHorizontalFill, *knobRight, *slotLeft, *slotHorizontalFill, *slotRight;
-static float horizontalPaddingLeft = 2.0;
-static float horizontalPaddingRight = 2.0;
-static float horizontalPaddingTop = 0.0;
-static float horizontalPaddingBottom = 1.0;
-static float minKnobWidth;
+static CGFloat horizontalPaddingLeft = 2.0;
+static CGFloat horizontalPaddingRight = 2.0;
+static CGFloat horizontalPaddingTop = 0.0;
+static CGFloat horizontalPaddingBottom = 1.0;
+static CGFloat minKnobWidth;
 
 static NSColor *backgroundColor;
 
@@ -187,22 +188,22 @@ static NSColor *backgroundColor;
 			
 			if (isVertical)
 			{
-				float knobHeight = roundf(slotRect.size.height * [self knobProportion]);
+				CGFloat knobHeight = round(slotRect.size.height * [self knobProportion]);
 				
 				if (knobHeight < minKnobHeight)
 					knobHeight = minKnobHeight;
 				
-				float knobY = slotRect.origin.y + roundf((slotRect.size.height - knobHeight) * [self floatValue]);
+				CGFloat knobY = slotRect.origin.y + round((slotRect.size.height - knobHeight) * [self floatValue]);
 				knobRect = NSMakeRect(verticalPaddingLeft, knobY, slotRect.size.width, knobHeight);
 			}
 			else
 			{
-				float knobWidth = roundf(slotRect.size.width * [self knobProportion]);
+				CGFloat knobWidth = round(slotRect.size.width * [self knobProportion]);
 				
 				if (knobWidth < minKnobWidth)
 					knobWidth = minKnobWidth;
 				
-				float knobX = slotRect.origin.x + roundf((slotRect.size.width - knobWidth) * [self floatValue]);
+				CGFloat knobX = slotRect.origin.x + round((slotRect.size.width - knobWidth) * [self floatValue]);
 				knobRect = NSMakeRect(knobX, horizontalPaddingTop, knobWidth, slotRect.size.height);
 			}
 			

@@ -6,6 +6,7 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWCustomView.h"
 #import "NSColor+BWAdditions.h"
 #import "NSWindow+BWAdditions.h"
@@ -177,8 +178,8 @@
 	drawPoint.x -= boundingRect.size.width / 2;
 	drawPoint.y -= boundingRect.size.height / 2;
 	
-	drawPoint.x = roundf(drawPoint.x);
-	drawPoint.y = roundf(drawPoint.y);
+	drawPoint.x = round(drawPoint.x);
+	drawPoint.y = round(drawPoint.y);
 	
 	[string drawAtPoint:drawPoint];
 }

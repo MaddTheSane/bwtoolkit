@@ -6,6 +6,7 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWStyledTextFieldCell.h"
 
 @interface NSCell (BWPrivate)
@@ -144,7 +145,7 @@
 	{	
 		float textHeight = [[self font] ascender] - [[self font] descender];
 		
-		NSSize boundSizeWithFullWidth = NSMakeSize([self controlView].frame.size.width,ceilf(textHeight));
+		NSSize boundSizeWithFullWidth = NSMakeSize([self controlView].frame.size.width,ceil(textHeight));
 		
 		NSImage *image = [[NSImage alloc] initWithSize:boundSizeWithFullWidth];
 		

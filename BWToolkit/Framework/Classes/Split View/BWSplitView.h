@@ -15,8 +15,8 @@
 	NSMutableDictionary *minValues, *maxValues, *minUnits, *maxUnits;
 	NSMutableDictionary *resizableSubviewPreferredProportion, *nonresizableSubviewPreferredSize;
 	NSArray *stateForLastPreferredCalculations;
-	int collapsiblePopupSelection;
-	float uncollapsedSize;
+	NSInteger collapsiblePopupSelection;
+	CGFloat uncollapsedSize;
 	
 	// Collapse button
 	NSButton *toggleCollapseButton;
@@ -29,7 +29,7 @@
 @property (strong) NSButton *toggleCollapseButton;
 @property (assign) id secondaryDelegate;
 @property (nonatomic) BOOL collapsibleSubviewCollapsed;
-@property int collapsiblePopupSelection;
+@property NSInteger collapsiblePopupSelection;
 @property BOOL dividerCanCollapse;
 
 // The split view divider color

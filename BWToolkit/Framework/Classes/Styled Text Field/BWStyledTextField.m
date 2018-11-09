@@ -44,7 +44,7 @@
 
 - (void)setShadowColor:(NSColor *)color
 {
-	[[self cell] setShadowColor:(__bridge CGColorRef)(color)];
+	[[self cell] setShadowColor:color];
 	
 	[self setNeedsDisplay:YES];
 }

@@ -6,6 +6,7 @@
 //  All code is provided under the New BSD license.
 //
 
+#include <tgmath.h>
 #import "BWTransparentSliderCell.h"
 
 @implementation BWTransparentSliderCell
@@ -44,7 +45,7 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 	NSRect slideRect = cellFrame;
 	slideRect.size.height = [trackFillImage size].height;
 	if(cellFrame.size.height > slideRect.size.height)
-		slideRect.origin.y += roundf((cellFrame.size.height - slideRect.size.height) * 0.5f);
+		slideRect.origin.y += round((cellFrame.size.height - slideRect.size.height) * 0.5f);
 	
 	slideRect.size.width -= 5;
 	slideRect.origin.x += 2;
@@ -95,8 +96,8 @@ static NSImage *trackLeftImage, *trackFillImage, *trackRightImage, *thumbPImage,
 	}
 
 	NSPoint drawPoint;
-	drawPoint.x = rect.origin.x + roundf((rect.size.width - drawImage.size.width) / 2) - 1;
-	drawPoint.y = NSMaxY(rect) - roundf((rect.size.height - drawImage.size.height) / 2) + 2;
+	drawPoint.x = rect.origin.x + round((rect.size.width - drawImage.size.width) / 2) - 1;
+	drawPoint.y = NSMaxY(rect) - round((rect.size.height - drawImage.size.height) / 2) + 2;
 	
 	if ([self numberOfTickMarks] > 0)
 	{
