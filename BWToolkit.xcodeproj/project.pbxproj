@@ -418,6 +418,8 @@
 		32DBCF980370C29C00C91783 /* BWToolkit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWToolkit_Prefix.pch; sourceTree = "<group>"; };
 		53DF68FE067E5B5A0090B5B0 /* BWToolkit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BWToolkit-Info.plist"; path = "../BWToolkit-Info.plist"; sourceTree = "<group>"; };
 		55363A082194FFAA004D1A82 /* Graphics.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Graphics.xcassets; sourceTree = "<group>"; };
+		55FF979621961AED0082191B /* BWTKMAS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTKMAS.modulemap; sourceTree = "<group>"; };
+		55FF979721961AED0082191B /* BWTK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTK.modulemap; sourceTree = "<group>"; };
 		8D1AC9730486D14A00FE50C9 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = ../Info.plist; sourceTree = "<group>"; };
 		C0D069550A49DF9100C95564 /* InterfaceBuilderKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = InterfaceBuilderKit.framework; path = /Developer/Library/Frameworks/InterfaceBuilderKit.framework; sourceTree = "<absolute>"; };
 		C7534CD31325BC4A002EF382 /* BWTK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = BWTK.framework; path = DerivedData/BWToolkit/Build/Products/Release/BWTK.framework; sourceTree = "<group>"; };
@@ -869,6 +871,8 @@
 		54D33B2C06778E4400C9C163 /* Framework */ = {
 			isa = PBXGroup;
 			children = (
+				55FF979721961AED0082191B /* BWTK.modulemap */,
+				55FF979621961AED0082191B /* BWTKMAS.modulemap */,
 				55363A082194FFAA004D1A82 /* Graphics.xcassets */,
 				CA630AAD0DC7F8ED00AD7F9E /* Classes */,
 				C0894DA40C32F4C100401507 /* Categories */,
@@ -1744,6 +1748,7 @@
 				INFOPLIST_FILE = "BWToolkit/BWToolkit-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = BWToolkit/Framework/BWTK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFramework;
 				PRODUCT_NAME = BWTK;
 				SKIP_INSTALL = NO;
@@ -1771,6 +1776,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = BWToolkit/Framework/BWTK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFramework;
 				PRODUCT_NAME = BWTK;
 				SKIP_INSTALL = NO;
@@ -1958,6 +1964,7 @@
 				INFOPLIST_FILE = "BWToolkit/BWToolkitMAS-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = BWToolkit/Framework/BWTKMAS.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFrameworkMAS;
 				PRODUCT_NAME = BWTKMAS;
 				SKIP_INSTALL = NO;
@@ -1986,6 +1993,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MODULEMAP_FILE = BWToolkit/Framework/BWTKMAS.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFrameworkMAS;
 				PRODUCT_NAME = BWTKMAS;
 				SKIP_INSTALL = NO;

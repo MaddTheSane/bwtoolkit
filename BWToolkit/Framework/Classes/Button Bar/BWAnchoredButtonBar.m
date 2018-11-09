@@ -59,7 +59,7 @@ static float scaleFactor = 0.0f;
     self = [super initWithFrame:frame];
     if (self) 
 	{
-        scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+        scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
 		[self setIsResizable:YES];
 		[self setIsAtBottom:YES];
     }
@@ -73,7 +73,7 @@ static float scaleFactor = 0.0f;
 		[self setIsResizable:[decoder decodeBoolForKey:@"BWABBIsResizable"]];
 		[self setIsAtBottom:[decoder decodeBoolForKey:@"BWABBIsAtBottom"]];
 		[self setHandleIsRightAligned:[decoder decodeBoolForKey:@"BWABBHandleIsRightAligned"]];
-		[self setSelectedIndex:[decoder decodeIntForKey:@"BWABBSelectedIndex"]];
+		[self setSelectedIndex:[decoder decodeIntegerForKey:@"BWABBSelectedIndex"]];
 	}
 	return self;
 }
@@ -85,12 +85,12 @@ static float scaleFactor = 0.0f;
 	[coder encodeBool:[self isResizable] forKey:@"BWABBIsResizable"];
 	[coder encodeBool:[self isAtBottom] forKey:@"BWABBIsAtBottom"];
 	[coder encodeBool:[self handleIsRightAligned] forKey:@"BWABBHandleIsRightAligned"];
-	[coder encodeInt:[self selectedIndex] forKey:@"BWABBSelectedIndex"];
+	[coder encodeInteger:[self selectedIndex] forKey:@"BWABBSelectedIndex"];
 }
 
 - (void)awakeFromNib
 {
-	scaleFactor = [[NSScreen mainScreen] userSpaceScaleFactor];
+	scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
 	
 	// See if we're in a split view, and set its delegate
 	NSSplitView *splitView = [self splitView];
