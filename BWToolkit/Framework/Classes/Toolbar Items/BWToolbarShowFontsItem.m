@@ -12,10 +12,7 @@
 
 - (NSImage *)image
 {
-	NSBundle *bundle = [NSBundle bundleForClass:[BWToolbarShowFontsItem class]];
-	NSImage *image = [bundle imageForResource:@"ToolbarItemFonts"];
-	
-	return image;
+	return [NSImage imageNamed:NSImageNameFontPanel];
 }
 
 - (NSString *)itemIdentifier

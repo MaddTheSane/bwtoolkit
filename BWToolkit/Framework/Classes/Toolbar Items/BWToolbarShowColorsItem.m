@@ -12,10 +12,7 @@
 
 - (NSImage *)image
 {
-	NSBundle *bundle = [NSBundle bundleForClass:[BWToolbarShowColorsItem class]];
-	NSImage *image = [bundle imageForResource:@"ToolbarItemColors"];
-	
-	return image;
+	return [NSImage imageNamed:NSImageNameColorPanel];
 }
 
 - (NSString *)itemIdentifier

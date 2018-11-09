@@ -10,7 +10,7 @@
 #import "NSString+BWAdditions.h"
 
 @interface BWToolbarItem ()
-@property (copy) NSString *identifierString;
+@property (nonatomic, copy) NSString *identifierString;
 @end
 
 @interface NSToolbarItem (BWTIPrivate)
