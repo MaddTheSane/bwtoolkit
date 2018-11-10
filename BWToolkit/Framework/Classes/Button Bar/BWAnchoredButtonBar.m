@@ -111,7 +111,7 @@ static CGFloat scaleFactor = 0.0f;
 			{
 				if ([currentDelegate splitViewDelegate] != nil && [[currentDelegate splitViewDelegate] isKindOfClass:[BWAnchoredButtonBar class]])
 				{
-					currentDelegate = [currentDelegate splitViewDelegate];
+					currentDelegate = (BWAnchoredButtonBar*)[currentDelegate splitViewDelegate];
 					lastDelegate = currentDelegate;
 				}
 				else
