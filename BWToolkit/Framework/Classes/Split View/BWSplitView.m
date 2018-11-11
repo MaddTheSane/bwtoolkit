@@ -1260,7 +1260,6 @@ static CGFloat scaleFactor = 1.0;
 			CGFloat allSubviewTotalSize = totalAvailableSize - dividerThicknessTotal;
 			// TODO: What to do if even the dividers don't fit?				
 			
-			int k;
 			for (NSInteger k = 0; k < [newSubviewSizes count]; k++)
 			{
 				NSNumber *key = @(k);

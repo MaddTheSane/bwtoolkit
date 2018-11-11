@@ -1,5 +1,34 @@
 framework module BWTKMAS {
 	umbrella header "BWToolkitFramework.h"
+	
+	module BWAdditions {
+		module NSWindow {
+			header "NSWindow+BWAdditions.h"
+			export *
+		}
+		
+		module NSView {
+			header "NSView+BWAdditions.h"
+			export *
+		}
+		
+		module NSImage {
+			header "NSImage+BWAdditions.h"
+			export *
+		}
+		
+		module NSColor {
+			header "NSColor+BWAdditions.h"
+			export *
+		}
+		
+		module NSApplication {
+			header "NSApplication+BWAdditions.h"
+			export *
+		}
+		
+		export *
+	}
 
 	export *
 	module * { export * }
