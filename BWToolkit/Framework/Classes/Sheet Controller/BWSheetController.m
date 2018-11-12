@@ -17,7 +17,7 @@
 {
 	// Hack so the sheet doesn't appear at launch in Cocoa Simulator (or in the actual app if "Visible at Launch" is checked)
 	[sheet setAlphaValue:0];
-	[sheet performSelector:@selector(orderOut:) withObject:nil afterDelay:0];
+	[sheet performSelector:@selector(orderOut:) withObject:nil afterDelay:0.01];
 	
 	// If the sheet has a toolbar or a bottom bar, make sure those elements can't move the window (private API)
 	if ([sheet respondsToSelector:@selector(setMovable:)])
@@ -39,8 +39,8 @@
 
 - (void)encodeWithCoder:(NSCoder*)coder
 {	
-	NSWindowController *tempSheetController = [[[NSWindowController alloc] initWithWindow:sheet] autorelease];
-	NSWindowController *tempParentWindowController = [[[NSWindowController alloc] initWithWindow:parentWindow] autorelease];
+	NSWindowController *tempSheetController = [[NSWindowController alloc] initWithWindow:sheet];
+	NSWindowController *tempParentWindowController = [[NSWindowController alloc] initWithWindow:parentWindow];
 	
 	[coder encodeObject:tempSheetController forKey:@"BWSCSheet"];
 	[coder encodeObject:tempParentWindowController forKey:@"BWSCParentWindow"];
@@ -62,7 +62,7 @@
 {
 	if (delegate != nil && [delegate respondsToSelector:@selector(shouldCloseSheet:)])
 	{	
-		if ([delegate shouldCloseSheet:sender])	
+		if ([delegate performSelector:@selector(shouldCloseSheet:) withObject:sender])
 			[self closeSheet:self];
 	}
 	else

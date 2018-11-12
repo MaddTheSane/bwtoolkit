@@ -96,7 +96,7 @@
 		C7D4ACE812C939E8000FD3F9 /* BWTransparentPopUpButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B030DC8004A00AD7F9E /* BWTransparentPopUpButtonCell.m */; };
 		C7D4ACE912C939E8000FD3F9 /* BWTransparentSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B050DC8004A00AD7F9E /* BWTransparentSlider.m */; };
 		C7D4ACEA12C939E8000FD3F9 /* BWTransparentSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B070DC8004A00AD7F9E /* BWTransparentSliderCell.m */; };
-		C7D4ACEB12C939E8000FD3F9 /* BWSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B1D0DC82DD600AD7F9E /* BWSplitView.m */; };
+		C7D4ACEB12C939E8000FD3F9 /* BWSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B1D0DC82DD600AD7F9E /* BWSplitView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C7D4ACEC12C939E8000FD3F9 /* BWTexturedSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B230DC82E2100AD7F9E /* BWTexturedSlider.m */; };
 		C7D4ACED12C939E8000FD3F9 /* BWTexturedSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B250DC82E2100AD7F9E /* BWTexturedSliderCell.m */; };
 		C7D4ACEE12C939E8000FD3F9 /* BWAddSmallBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630CF90DC843DD00AD7F9E /* BWAddSmallBottomBar.m */; };
@@ -116,7 +116,7 @@
 		C7D4ACFC12C939E8000FD3F9 /* BWUnanchoredButton.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4071380E0B985300B56AB7 /* BWUnanchoredButton.m */; };
 		C7D4ACFD12C939E8000FD3F9 /* BWUnanchoredButtonCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA40713C0E0B986000B56AB7 /* BWUnanchoredButtonCell.m */; };
 		C7D4ACFE12C939E8000FD3F9 /* BWUnanchoredButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4071CC0E0ED32300B56AB7 /* BWUnanchoredButtonContainer.m */; };
-		C7D4ACFF12C939E8000FD3F9 /* BWSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4A50DA0E1DC7AB00BC7395 /* BWSheetController.m */; };
+		C7D4ACFF12C939E8000FD3F9 /* BWSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4A50DA0E1DC7AB00BC7395 /* BWSheetController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		C7D4AD0012C939E8000FD3F9 /* BWTransparentScrollView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA10ABD70E272748009BA4D7 /* BWTransparentScrollView.m */; };
 		C7D4AD0112C939E8000FD3F9 /* BWAddMiniBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CA685EFE0E68C6CB0003D937 /* BWAddMiniBottomBar.m */; };
 		C7D4AD0212C939E8000FD3F9 /* BWAddSheetBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = CA685F200E68C8290003D937 /* BWAddSheetBottomBar.m */; };
@@ -154,7 +154,7 @@
 		CA4071CD0E0ED32300B56AB7 /* BWUnanchoredButtonContainer.h in Headers */ = {isa = PBXBuildFile; fileRef = CA4071CB0E0ED32300B56AB7 /* BWUnanchoredButtonContainer.h */; };
 		CA4071CE0E0ED32300B56AB7 /* BWUnanchoredButtonContainer.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4071CC0E0ED32300B56AB7 /* BWUnanchoredButtonContainer.m */; };
 		CA4A50DB0E1DC7AB00BC7395 /* BWSheetController.h in Headers */ = {isa = PBXBuildFile; fileRef = CA4A50D90E1DC7AB00BC7395 /* BWSheetController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA4A50DC0E1DC7AB00BC7395 /* BWSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4A50DA0E1DC7AB00BC7395 /* BWSheetController.m */; };
+		CA4A50DC0E1DC7AB00BC7395 /* BWSheetController.m in Sources */ = {isa = PBXBuildFile; fileRef = CA4A50DA0E1DC7AB00BC7395 /* BWSheetController.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CA4A524B0E1EF21500BC7395 /* Library-SheetController.tif in Resources */ = {isa = PBXBuildFile; fileRef = CA4A51E20E1EC6B700BC7395 /* Library-SheetController.tif */; };
 		CA630AE40DC7FB6300AD7F9E /* BWToolbarShowColorsItem.h in Headers */ = {isa = PBXBuildFile; fileRef = CA630AE00DC7FB6300AD7F9E /* BWToolbarShowColorsItem.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA630AE50DC7FB6300AD7F9E /* BWToolbarShowColorsItem.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630AE10DC7FB6300AD7F9E /* BWToolbarShowColorsItem.m */; };
@@ -184,7 +184,7 @@
 		CA630B180DC8004A00AD7F9E /* BWTransparentSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA630B060DC8004A00AD7F9E /* BWTransparentSliderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA630B190DC8004A00AD7F9E /* BWTransparentSliderCell.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B070DC8004A00AD7F9E /* BWTransparentSliderCell.m */; };
 		CA630B1E0DC82DD600AD7F9E /* BWSplitView.h in Headers */ = {isa = PBXBuildFile; fileRef = CA630B1C0DC82DD600AD7F9E /* BWSplitView.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		CA630B1F0DC82DD600AD7F9E /* BWSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B1D0DC82DD600AD7F9E /* BWSplitView.m */; };
+		CA630B1F0DC82DD600AD7F9E /* BWSplitView.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B1D0DC82DD600AD7F9E /* BWSplitView.m */; settings = {COMPILER_FLAGS = "-fobjc-arc"; }; };
 		CA630B260DC82E2100AD7F9E /* BWTexturedSlider.h in Headers */ = {isa = PBXBuildFile; fileRef = CA630B220DC82E2100AD7F9E /* BWTexturedSlider.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		CA630B270DC82E2100AD7F9E /* BWTexturedSlider.m in Sources */ = {isa = PBXBuildFile; fileRef = CA630B230DC82E2100AD7F9E /* BWTexturedSlider.m */; };
 		CA630B280DC82E2100AD7F9E /* BWTexturedSliderCell.h in Headers */ = {isa = PBXBuildFile; fileRef = CA630B240DC82E2100AD7F9E /* BWTexturedSliderCell.h */; settings = {ATTRIBUTES = (Public, ); }; };

@@ -52,7 +52,7 @@
 			self.solidColor = [NSColor greenColor];
 		
 		if (self.hasGradient)
-			[self performSelector:@selector(applyGradient) withObject:nil afterDelay:0];
+			[self performSelector:@selector(applyGradient) withObject:nil afterDelay:0.01];
 	}
 	return self;
 }
@@ -103,7 +103,7 @@
 	// Gradient code
 	if ([previousAttributes objectForKey:@"NSFont"] != nil && [[previousAttributes objectForKey:@"NSFont"] isEqualTo:[attributes objectForKey:@"NSFont"]] == NO)
 	{
-		[self performSelector:@selector(applyGradient) withObject:nil afterDelay:0];
+		[self performSelector:@selector(applyGradient) withObject:nil afterDelay:0.01];
 		[self setPreviousAttributes:attributes];
 	}
 	

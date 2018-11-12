@@ -16,8 +16,8 @@
 	BOOL isPreferencesToolbar;
 }
 
-@property (copy) NSMutableDictionary *contentViewsByIdentifier;
-@property (copy) NSMutableDictionary *windowSizesByIdentifier;
+@property (strong) NSMutableDictionary *contentViewsByIdentifier;
+@property (strong) NSMutableDictionary *windowSizesByIdentifier;
 @property (copy) NSString *selectedIdentifier;
 @property (copy) NSString *oldWindowTitle;
 @property (assign) NSSize initialIBWindowSize;

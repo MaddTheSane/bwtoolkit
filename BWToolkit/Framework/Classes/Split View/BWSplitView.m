@@ -67,8 +67,8 @@ static CGFloat scaleFactor = 1.0;
     gradient           = [[NSGradient alloc] initWithStartingColor:gradientStartColor endingColor:gradientEndColor];
 
 	NSBundle *bundle = [NSBundle bundleForClass:[BWSplitView class]];
-	dimpleImageBitmap  = [[bundle imageForResource:@"GradientSplitViewDimple"] retain];
-	dimpleImageVector  = [[bundle imageForResource:@"GradientSplitViewDimple"] retain];
+	dimpleImageBitmap  = [bundle imageForResource:@"GradientSplitViewDimple"];
+	dimpleImageVector  = [bundle imageForResource:@"GradientSplitViewDimple"];
     [dimpleImageBitmap setFlipped:YES];
 	[dimpleImageVector setFlipped:YES];
 }

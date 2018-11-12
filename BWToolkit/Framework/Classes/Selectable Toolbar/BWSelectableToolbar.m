@@ -47,7 +47,7 @@ static NSToolbar *editableToolbar;
 @interface BWSelectableToolbar ()
 @property (retain) BWSelectableToolbarHelper *helper;
 @property (readonly) NSMutableArray *labels;
-@property (nonatomic, copy) NSMutableDictionary *enabledByIdentifier;
+@property (nonatomic, strong) NSMutableDictionary *enabledByIdentifier;
 @property (nonatomic) BOOL isPreferencesToolbar;
 @end
 
