@@ -12,7 +12,7 @@
 
 + (BOOL)bwShiftKeyIsDown
 {
-	if ([[NSApp currentEvent] modifierFlags] & NSShiftKeyMask)
+	if ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagShift)
 		return YES;
 	
 	return NO;
@@ -20,7 +20,7 @@
 
 + (BOOL)bwCommandKeyIsDown
 {
-	if ([[NSApp currentEvent] modifierFlags] & NSCommandKeyMask)
+	if ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagCommand)
 		return YES;
 	
 	return NO;
@@ -28,7 +28,7 @@
 
 + (BOOL)bwOptionKeyIsDown
 {
-	if ([[NSApp currentEvent] modifierFlags] & NSAlternateKeyMask)
+	if ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagOption)
 		return YES;
 	
 	return NO;
@@ -36,7 +36,7 @@
 
 + (BOOL)bwControlKeyIsDown
 {
-	if ([[NSApp currentEvent] modifierFlags] & NSControlKeyMask)
+	if ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagControl)
 		return YES;
 	
 	return NO;
@@ -44,7 +44,7 @@
 
 + (BOOL)bwCapsLockKeyIsDown
 {
-	if ([[NSApp currentEvent] modifierFlags] & NSAlphaShiftKeyMask)
+	if ([[NSApp currentEvent] modifierFlags] & NSEventModifierFlagCapsLock)
 		return YES;
 	
 	return NO;

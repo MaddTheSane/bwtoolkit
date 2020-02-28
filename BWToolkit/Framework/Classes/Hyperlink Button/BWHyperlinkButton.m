@@ -50,7 +50,7 @@
 {
 #if !TARGET_INTERFACE_BUILDER
 	if (![self respondsToSelector:@selector(ibDidAddToDesignableDocument:)])
-		[[NSWorkspace sharedWorkspace] openURL:[NSURL URLWithString:self.urlString]];
+		[[NSWorkspace sharedWorkspace] openURL:url];
 #endif
 }
 

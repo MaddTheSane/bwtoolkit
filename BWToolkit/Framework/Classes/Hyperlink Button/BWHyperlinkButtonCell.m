@@ -21,7 +21,7 @@
 	[attributes setObject:[NSColor blueColor] forKey:NSForegroundColorAttributeName];
 	[attributes setObject:@(NSUnderlineStyleSingle) forKey:NSUnderlineStyleAttributeName];
 	
-	return [attributes autorelease];
+	return [attributes copy];
 }
 
 - (void)drawBezelWithFrame:(NSRect)frame inView:(NSView *)controlView

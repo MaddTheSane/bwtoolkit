@@ -10,10 +10,10 @@
 
 @interface NSEvent (BWAdditions)
 
-+ (BOOL)bwShiftKeyIsDown;
-+ (BOOL)bwCommandKeyIsDown;
-+ (BOOL)bwOptionKeyIsDown;
-+ (BOOL)bwControlKeyIsDown;
-+ (BOOL)bwCapsLockKeyIsDown;
+@property (readonly, class) BOOL bwShiftKeyIsDown;
+@property (readonly, class) BOOL bwCommandKeyIsDown;
+@property (readonly, class) BOOL bwOptionKeyIsDown;
+@property (readonly, class) BOOL bwControlKeyIsDown;
+@property (readonly, class) BOOL bwCapsLockKeyIsDown;
 
 @end

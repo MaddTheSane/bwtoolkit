@@ -77,7 +77,7 @@ static NSColor *rowColor, *altRowColor, *highlightColor;
 	NSInteger		aRow = aVisibleRowIndexes.location;
 	NSInteger		anEndRow = aRow + aVisibleRowIndexes.length;
 
-    for (aRow; aRow < anEndRow; aRow++)
+    for (; aRow < anEndRow; aRow++)
     {
 		if([aSelectedRowIndexes containsIndex:aRow])
 		{

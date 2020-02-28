@@ -15,7 +15,9 @@ IB_DESIGNABLE
 	NSInteger selectedIndex;
 }
 
-@property (nonatomic) IBInspectable BOOL isResizable, isAtBottom, handleIsRightAligned;
+@property (nonatomic, getter=isResizable) IBInspectable BOOL resizable;
+@property (nonatomic, getter=isAtBottom) IBInspectable BOOL atBottom;
+@property (nonatomic) IBInspectable BOOL handleIsRightAligned;
 @property (nonatomic) IBInspectable NSInteger selectedIndex;
 
 //! The mode of this bar with a resize handle makes use of some NSSplitView delegate methods. Use the splitViewDelegate for any custom delegate implementations
@@ -24,4 +26,9 @@ IB_DESIGNABLE
 
 + (BOOL)wasBorderedBar;
 
+@end
+
+@interface BWAnchoredButtonBar (deprecated)
+- (void)setIsResizable:(BOOL)resize API_DEPRECATED_WITH_REPLACEMENT("-setResizable:", macos(10.0, 10.7));
+- (void)setIsAtBottom:(BOOL)resize API_DEPRECATED_WITH_REPLACEMENT("-setAtBottom:", macos(10.0, 10.7));
 @end

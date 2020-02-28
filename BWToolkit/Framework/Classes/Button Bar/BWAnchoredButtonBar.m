@@ -30,18 +30,18 @@ static CGFloat scaleFactor = 0.0f;
 
 @implementation BWAnchoredButtonBar
 
-@synthesize selectedIndex, isAtBottom, isResizable, handleIsRightAligned, splitViewDelegate;
+@synthesize selectedIndex, atBottom=isAtBottom, resizable=isResizable, handleIsRightAligned, splitViewDelegate;
 
 + (void)initialize;
 {
-	topLineColor		 = [[NSColor colorWithCalibratedWhite:(202.0f / 255.0f) alpha:1] retain];
-	bottomLineColor		 = [[NSColor colorWithCalibratedWhite:(170.0f / 255.0f) alpha:1] retain];
-    topColor			 = [[NSColor colorWithCalibratedWhite:(253.0f / 255.0f) alpha:1] retain];
-    middleTopColor		 = [[NSColor colorWithCalibratedWhite:(242.0f / 255.0f) alpha:1] retain];
-    middleBottomColor	 = [[NSColor colorWithCalibratedWhite:(230.0f / 255.0f) alpha:1] retain];
-	bottomColor			 = [[NSColor colorWithCalibratedWhite:(230.0f / 255.0f) alpha:1] retain];
-	sideInsetColor		 = [[NSColor colorWithCalibratedWhite:(255.0f / 255.0f) alpha:0.5] retain];
-	borderedTopLineColor = [[NSColor colorWithCalibratedWhite:(190.0f / 255.0f) alpha:1] retain];
+	topLineColor		 = [[NSColor colorWithCalibratedWhite:(202.0 / 255.0) alpha:1] retain];
+	bottomLineColor		 = [[NSColor colorWithCalibratedWhite:(170.0 / 255.0) alpha:1] retain];
+    topColor			 = [[NSColor colorWithCalibratedWhite:(253.0 / 255.0) alpha:1] retain];
+    middleTopColor		 = [[NSColor colorWithCalibratedWhite:(242.0 / 255.0) alpha:1] retain];
+    middleBottomColor	 = [[NSColor colorWithCalibratedWhite:(230.0 / 255.0) alpha:1] retain];
+	bottomColor			 = [[NSColor colorWithCalibratedWhite:(230.0 / 255.0) alpha:1] retain];
+	sideInsetColor		 = [[NSColor colorWithCalibratedWhite:(255.0 / 255.0) alpha:0.5] retain];
+	borderedTopLineColor = [[NSColor colorWithCalibratedWhite:(190.0 / 255.0) alpha:1] retain];
     
 	gradient			 = [[NSGradient alloc] initWithColorsAndLocations:
 						   topColor, (CGFloat)0.0,
@@ -50,8 +50,8 @@ static CGFloat scaleFactor = 0.0f;
 						   bottomColor, (CGFloat)1.0,
 						   nil];
 	
-	resizeHandleColor	 = [[NSColor colorWithCalibratedWhite:(0.0f / 255.0f) alpha:0.598] retain];
-	resizeInsetColor	 = [[NSColor colorWithCalibratedWhite:(255.0f / 255.0f) alpha:0.55] retain];
+	resizeHandleColor	 = [[NSColor colorWithCalibratedWhite:(0.0 / 255.0) alpha:0.598] retain];
+	resizeInsetColor	 = [[NSColor colorWithCalibratedWhite:(255.0 / 255.0) alpha:0.55] retain];
 }
 
 - (id)initWithFrame:(NSRect)frame 
@@ -60,8 +60,8 @@ static CGFloat scaleFactor = 0.0f;
     if (self) 
 	{
         scaleFactor = [[NSScreen mainScreen] backingScaleFactor];
-		[self setIsResizable:YES];
-		[self setIsAtBottom:YES];
+		[self setResizable:YES];
+		[self setAtBottom:YES];
     }
     return self;
 }
@@ -70,8 +70,8 @@ static CGFloat scaleFactor = 0.0f;
 {
     if ((self = [super initWithCoder:decoder]) != nil)
 	{
-		[self setIsResizable:[decoder decodeBoolForKey:@"BWABBIsResizable"]];
-		[self setIsAtBottom:[decoder decodeBoolForKey:@"BWABBIsAtBottom"]];
+		[self setResizable:[decoder decodeBoolForKey:@"BWABBIsResizable"]];
+		[self setAtBottom:[decoder decodeBoolForKey:@"BWABBIsAtBottom"]];
 		[self setHandleIsRightAligned:[decoder decodeBoolForKey:@"BWABBHandleIsRightAligned"]];
 		[self setSelectedIndex:[decoder decodeIntegerForKey:@"BWABBSelectedIndex"]];
 	}
@@ -198,14 +198,14 @@ static CGFloat scaleFactor = 0.0f;
 					rightMostView = currentSubview;
 				
 				if ([currentSubview frame].origin.x == 0)
-					[(BWAnchoredButton *)currentSubview setIsAtLeftEdgeOfBar:YES];
+					[(BWAnchoredButton *)currentSubview setAtLeftEdgeOfBar:YES];
 				else
-					[(BWAnchoredButton *)currentSubview setIsAtLeftEdgeOfBar:NO];
+					[(BWAnchoredButton *)currentSubview setAtLeftEdgeOfBar:NO];
 				
 				if (NSMaxX([currentSubview frame]) == NSMaxX([self bounds]))
-					[(BWAnchoredButton *)currentSubview setIsAtRightEdgeOfBar:YES];
+					[(BWAnchoredButton *)currentSubview setAtRightEdgeOfBar:YES];
 				else
-					[(BWAnchoredButton *)currentSubview setIsAtRightEdgeOfBar:NO];
+					[(BWAnchoredButton *)currentSubview setAtRightEdgeOfBar:NO];
 			}
 		}
 	}
@@ -255,7 +255,7 @@ static CGFloat scaleFactor = 0.0f;
 	return splitView;
 }
 
-- (void)setIsAtBottom:(BOOL)flag
+- (void)setAtBottom:(BOOL)flag
 {
 	isAtBottom = flag;
 
@@ -277,18 +277,18 @@ static CGFloat scaleFactor = 0.0f;
 {
 	if (anIndex == 0)
 	{
-		[self setIsAtBottom:YES];
-		[self setIsResizable:YES];
+		[self setAtBottom:YES];
+		[self setResizable:YES];
 	}
 	else if (anIndex == 1)
 	{
-		[self setIsAtBottom:YES];
-		[self setIsResizable:NO];
+		[self setAtBottom:YES];
+		[self setResizable:NO];
 	}
 	else if (anIndex == 2)
 	{
-		[self setIsAtBottom:NO];
-		[self setIsResizable:NO];
+		[self setAtBottom:NO];
+		[self setResizable:NO];
 	}
 	selectedIndex = anIndex;
 	
@@ -406,4 +406,17 @@ static CGFloat scaleFactor = 0.0f;
 	return NO;
 }
 
+@end
+
+@implementation BWAnchoredButtonBar (deprecated)
+
+- (void)setIsResizable:(BOOL)resize
+{
+	self.resizable = resize;
+}
+
+- (void)setIsAtBottom:(BOOL)resize
+{
+	self.atBottom = resize;
+}
 @end

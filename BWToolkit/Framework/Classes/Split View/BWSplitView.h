@@ -33,13 +33,13 @@ IB_DESIGNABLE
 @property IBInspectable NSInteger collapsiblePopupSelection;
 @property IBInspectable BOOL dividerCanCollapse;
 
-// The split view divider color
+/// The split view divider color
 @property (copy) IBInspectable NSColor *color;
 
-// Flag for whether a custom divider color is enabled. If not, the standard divider color is used.
+/// Flag for whether a custom divider color is enabled. If not, the standard divider color is used.
 @property (nonatomic) IBInspectable BOOL colorIsEnabled;
 
-// Call this method to collapse or expand a subview configured as collapsible in the IB inspector.
+/// Call this method to collapse or expand a subview configured as collapsible in the IB inspector.
 - (IBAction)toggleCollapse:(id)sender;
 
 @end

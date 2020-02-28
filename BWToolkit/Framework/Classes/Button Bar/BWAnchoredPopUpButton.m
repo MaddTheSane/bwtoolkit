@@ -12,8 +12,8 @@
 
 @implementation BWAnchoredPopUpButton
 
-@synthesize isAtLeftEdgeOfBar;
-@synthesize isAtRightEdgeOfBar;
+@synthesize atLeftEdgeOfBar=isAtLeftEdgeOfBar;
+@synthesize atRightEdgeOfBar=isAtRightEdgeOfBar;
 
 - (id)initWithCoder:(NSCoder *)decoder;
 {
@@ -38,6 +38,20 @@
 	NSRect frame = [super frame];
 	frame.size.height = 24;
 	return frame;
+}
+
+@end
+
+@implementation BWAnchoredPopUpButton (deprecated)
+
+- (void)setIsAtLeftEdgeOfBar:(BOOL)resize
+{
+	self.atLeftEdgeOfBar = resize;
+}
+
+- (void)setIsAtRightEdgeOfBar:(BOOL)resize
+{
+	self.atRightEdgeOfBar = resize;
 }
 
 @end

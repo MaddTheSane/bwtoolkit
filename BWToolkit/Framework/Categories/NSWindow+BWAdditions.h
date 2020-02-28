@@ -11,6 +11,6 @@
 @interface NSWindow (BWAdditions)
 
 - (void)bwResizeToSize:(NSSize)newSize animate:(BOOL)animateFlag;
-- (BOOL)bwIsTextured;
+@property (readonly) BOOL bwIsTextured;
 
 @end

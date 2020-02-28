@@ -15,7 +15,12 @@
 	NSPoint topAndLeftInset;
 }
 
-@property BOOL isAtLeftEdgeOfBar;
-@property BOOL isAtRightEdgeOfBar;
+@property (getter=isAtLeftEdgeOfBar) BOOL atLeftEdgeOfBar;
+@property (getter=isAtRightEdgeOfBar) BOOL atRightEdgeOfBar;
 
+@end
+
+@interface BWAnchoredButton (deprecated)
+- (void)setIsAtLeftEdgeOfBar:(BOOL)resize API_DEPRECATED_WITH_REPLACEMENT("-setAtLeftEdgeOfBar:", macos(10.0, 10.7));
+- (void)setIsAtRightEdgeOfBar:(BOOL)resize API_DEPRECATED_WITH_REPLACEMENT("-setAtRightEdgeOfBar:", macos(10.0, 10.7));
 @end

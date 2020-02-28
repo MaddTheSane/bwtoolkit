@@ -8,7 +8,7 @@
 
 #import "NSView+BWAdditions.h"
 
-NSComparisonResult compareViews(id firstView, id secondView, id context);
+static NSComparisonResult compareViews(id firstView, id secondView, id context);
 NSComparisonResult compareViews(id firstView, id secondView, id context)
 {
 	if (firstView != context && secondView != context) {return NSOrderedSame;}
@@ -32,7 +32,7 @@ NSComparisonResult compareViews(id firstView, id secondView, id context)
 
 - (id)bwAnimator
 {
-	float duration = [[NSAnimationContext currentContext] duration];
+	NSTimeInterval duration = [[NSAnimationContext currentContext] duration];
 	[self performSelector:@selector(bwTurnOffLayer) withObject:nil afterDelay:duration];
 	
 	return [self animator];
