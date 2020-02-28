@@ -24,6 +24,8 @@
 		13F8B89007B43554008AE28D /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD92D38A0106425D02CA0E72 /* Cocoa.framework */; };
 		5505E0CC240971D2002339C7 /* NSApplication+BWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F952B151F780F50001AEAA8 /* NSApplication+BWAdditions.m */; };
 		5505E0CD240971D2002339C7 /* NSApplication+BWAdditions.m in Sources */ = {isa = PBXBuildFile; fileRef = 0F952B151F780F50001AEAA8 /* NSApplication+BWAdditions.m */; };
+		5505E0D024097579002339C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5505E0D324097579002339C7 /* InfoPlist.strings */; };
+		5505E0D124097579002339C7 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 5505E0D324097579002339C7 /* InfoPlist.strings */; };
 		55363A092194FFAA004D1A82 /* Graphics.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55363A082194FFAA004D1A82 /* Graphics.xcassets */; };
 		55363A0A2194FFAA004D1A82 /* Graphics.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55363A082194FFAA004D1A82 /* Graphics.xcassets */; };
 		55DC09E021989D9800CEAE90 /* BWStyledTextField.h in Headers */ = {isa = PBXBuildFile; fileRef = CAEE077A0FD79CE9001A1C3F /* BWStyledTextField.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -297,7 +299,6 @@
 		0F952AE81F77FEC5001AEAA8 /* BWTransparentTableView.classdescription */ = {isa = PBXFileReference; lastKnownFileType = text.plist.ibClassDescription; path = BWTransparentTableView.classdescription; sourceTree = "<group>"; };
 		0F952AE91F77FEC5001AEAA8 /* BWTransparentTableViewCell.classdescription */ = {isa = PBXFileReference; lastKnownFileType = text.plist.ibClassDescription; path = BWTransparentTableViewCell.classdescription; sourceTree = "<group>"; };
 		0F952AEA1F77FEC5001AEAA8 /* BWTransparentTextFieldCell.classdescription */ = {isa = PBXFileReference; lastKnownFileType = text.plist.ibClassDescription; path = BWTransparentTextFieldCell.classdescription; sourceTree = "<group>"; };
-		0F952B111F780436001AEAA8 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; name = InfoPlist.strings; path = ../InfoPlist.strings; sourceTree = "<group>"; };
 		0F952B131F780553001AEAA8 /* BWToolkitLibrary.nib */ = {isa = PBXFileReference; lastKnownFileType = wrapper.nib; path = BWToolkitLibrary.nib; sourceTree = "<group>"; };
 		0F952B151F780F50001AEAA8 /* NSApplication+BWAdditions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSApplication+BWAdditions.m"; sourceTree = "<group>"; };
 		13F8B88807B434F6008AE28D /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = System/Library/Frameworks/AppKit.framework; sourceTree = SDKROOT; };
@@ -305,6 +306,7 @@
 		13F8B88A07B434F6008AE28D /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		32DBCF980370C29C00C91783 /* BWToolkit_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BWToolkit_Prefix.pch; sourceTree = "<group>"; };
 		53DF68FE067E5B5A0090B5B0 /* BWToolkit-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "BWToolkit-Info.plist"; path = "../BWToolkit-Info.plist"; sourceTree = "<group>"; };
+		5505E0D224097579002339C7 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		55363A082194FFAA004D1A82 /* Graphics.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Graphics.xcassets; sourceTree = "<group>"; };
 		55FF979621961AED0082191B /* BWTKMAS.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTKMAS.modulemap; sourceTree = "<group>"; };
 		55FF979721961AED0082191B /* BWTK.modulemap */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.module-map"; path = BWTK.modulemap; sourceTree = "<group>"; };
@@ -576,7 +578,7 @@
 				CAEB14740F4A538100E57E67 /* License.rtf */,
 				8D1AC9730486D14A00FE50C9 /* Info.plist */,
 				53DF68FE067E5B5A0090B5B0 /* BWToolkit-Info.plist */,
-				0F952B111F780436001AEAA8 /* InfoPlist.strings */,
+				5505E0D324097579002339C7 /* InfoPlist.strings */,
 				C7D4AD1712C939E8000FD3F9 /* BWToolkitMAS-Info.plist */,
 			);
 			name = Resources;
@@ -1303,13 +1305,13 @@
 			};
 			buildConfigurationList = C056398B08A954F8003078D8 /* Build configuration list for PBXProject "BWToolkit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 1;
 			knownRegions = (
-				English,
-				Japanese,
-				French,
-				German,
+				en,
+				ja,
+				fr,
+				de,
 			);
 			mainGroup = 0259C574FE90428111CA0C5A /* BWToolkit */;
 			productRefGroup = C7534CD61325BC4A002EF382 /* Products */;
@@ -1332,6 +1334,7 @@
 				55363A092194FFAA004D1A82 /* Graphics.xcassets in Resources */,
 				CAEB14750F4A538100E57E67 /* License.rtf in Resources */,
 				CAEB14770F4A538A00E57E67 /* Release Notes.rtf in Resources */,
+				5505E0D024097579002339C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1343,6 +1346,7 @@
 				55363A0A2194FFAA004D1A82 /* Graphics.xcassets in Resources */,
 				C7D4ACDA12C939E8000FD3F9 /* License.rtf in Resources */,
 				C7D4ACDB12C939E8000FD3F9 /* Release Notes.rtf in Resources */,
+				5505E0D124097579002339C7 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1474,6 +1478,18 @@
 		};
 /* End PBXTargetDependency section */
 
+/* Begin PBXVariantGroup section */
+		5505E0D324097579002339C7 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5505E0D224097579002339C7 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = ..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
 /* Begin XCBuildConfiguration section */
 		C056398008A954F8003078D8 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1482,6 +1498,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.2.6;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1500,6 +1517,7 @@
 				INFOPLIST_FILE = "BWToolkit/BWToolkit-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MARKETING_VERSION = 1.2.6;
 				MODULEMAP_FILE = BWToolkit/Framework/BWTK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFramework;
 				PRODUCT_NAME = BWTK;
@@ -1513,6 +1531,7 @@
 				"ARCHS[sdk=macosx10.5]" = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1.2.6;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1528,6 +1547,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MARKETING_VERSION = 1.2.6;
 				MODULEMAP_FILE = BWToolkit/Framework/BWTK.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFramework;
 				PRODUCT_NAME = BWTK;
@@ -1655,6 +1675,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1.2.6;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1674,6 +1695,7 @@
 				INFOPLIST_FILE = "BWToolkit/BWToolkitMAS-Info.plist";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MARKETING_VERSION = 1.2.6;
 				MODULEMAP_FILE = BWToolkit/Framework/BWTKMAS.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFrameworkMAS;
 				PRODUCT_NAME = BWTKMAS;
@@ -1687,6 +1709,7 @@
 				"ARCHS[sdk=macosx10.5]" = "$(ARCHS_STANDARD_32_64_BIT)";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
+				CURRENT_PROJECT_VERSION = 1.2.6;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -1703,6 +1726,7 @@
 				INSTALL_MODE_FLAG = "go-w,a+rX";
 				INSTALL_PATH = "@loader_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.7;
+				MARKETING_VERSION = 1.2.6;
 				MODULEMAP_FILE = BWToolkit/Framework/BWTKMAS.modulemap;
 				PRODUCT_BUNDLE_IDENTIFIER = com.brandonwalkin.BWToolkitFrameworkMAS;
 				PRODUCT_NAME = BWTKMAS;
