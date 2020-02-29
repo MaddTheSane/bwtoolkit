@@ -69,8 +69,6 @@ static CGFloat scaleFactor = 1.0;
 	NSBundle *bundle = [NSBundle bundleForClass:[BWSplitView class]];
 	dimpleImageBitmap  = [bundle imageForResource:@"GradientSplitViewDimple"];
 	dimpleImageVector  = [bundle imageForResource:@"GradientSplitViewDimple"];
-    [dimpleImageBitmap setFlipped:YES];
-	[dimpleImageVector setFlipped:YES];
 }
 
 - (id)initWithCoder:(NSCoder *)decoder;
@@ -182,12 +180,12 @@ static CGFloat scaleFactor = 1.0;
 	if (scaleFactor == 1)
 	{
 		NSRect dimpleRect = NSMakeRect(0,0,dimpleDimension,dimpleDimension);
-		[dimpleImageBitmap drawInRect:destRect fromRect:dimpleRect operation:NSCompositeSourceOver fraction:1];
+		[dimpleImageBitmap drawInRect:destRect fromRect:dimpleRect operation:NSCompositeSourceOver fraction:1 respectFlipped:YES hints:nil];
 	}
     else
 	{
 		NSRect dimpleRect = NSMakeRect(0,0,[dimpleImageVector size].width,[dimpleImageVector size].height);
-		[dimpleImageVector drawInRect:destRect fromRect:dimpleRect operation:NSCompositeSourceOver fraction:1];
+		[dimpleImageVector drawInRect:destRect fromRect:dimpleRect operation:NSCompositeSourceOver fraction:1 respectFlipped:YES hints:nil];
 	}
 }
 
